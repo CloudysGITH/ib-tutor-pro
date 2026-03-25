@@ -113,7 +113,7 @@ export default function QuizTab({ subject }: { subject: Subject }) {
           {questions.map((q, i) => (
             <div
               key={q.id}
-              className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
+              className={`w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold ${
                 answers[i] === q.correctAnswer ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'
               }`}
             >
@@ -182,7 +182,7 @@ export default function QuizTab({ subject }: { subject: Subject }) {
                   onClick={() => handleSelect(i)}
                   className={`w-full text-left p-4 rounded-lg border transition-all flex items-center gap-3 ${bg}`}
                 >
-                  <span className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold shrink-0">
+                  <span className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold shrink-0">
                     {String.fromCharCode(65 + i)}
                   </span>
                   <span className="text-sm text-white">{opt}</span>

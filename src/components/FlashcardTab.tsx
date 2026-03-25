@@ -82,17 +82,17 @@ export default function FlashcardTab({ subject }: { subject: Subject }) {
         >
           {/* Front */}
           <div
-            className="glass rounded-2xl p-8 min-h-[280px] flex flex-col justify-center items-center text-center"
+            className="glass rounded-2xl p-6 sm:p-8 min-h-[220px] sm:min-h-[280px] flex flex-col justify-center items-center text-center"
             style={{ backfaceVisibility: "hidden" }}
           >
-            <span className="text-[11px] text-zinc-500 mb-4 uppercase tracking-wider">{card.topic}</span>
-            <p className="text-xl font-medium text-white">{card.front}</p>
-            <span className="text-xs text-zinc-600 mt-6">Click to flip</span>
+            <span className="text-xs text-zinc-500 mb-3 sm:mb-4 uppercase tracking-wider">{card.topic}</span>
+            <p className="text-lg sm:text-xl font-medium text-white">{card.front}</p>
+            <span className="text-xs text-zinc-600 mt-4 sm:mt-6">Click to flip</span>
           </div>
 
           {/* Back */}
           <div
-            className="glass rounded-2xl p-8 min-h-[280px] flex flex-col justify-center items-center text-center absolute inset-0"
+            className="glass rounded-2xl p-6 sm:p-8 min-h-[220px] sm:min-h-[280px] flex flex-col justify-center items-center text-center absolute inset-0"
             style={{
               backfaceVisibility: "hidden",
               transform: "rotateY(180deg)",
@@ -116,7 +116,7 @@ export default function FlashcardTab({ subject }: { subject: Subject }) {
         </button>
         <button
           onClick={() => { setCurrentIndex(0); setFlipped(false); }}
-          className="p-2 rounded-full bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 transition-all"
+          className="p-3 rounded-full bg-white/5 text-zinc-400 hover:text-white hover:bg-white/10 transition-all"
         >
           <RotateCcw size={16} />
         </button>

@@ -179,19 +179,19 @@ export default function PastPapersTab({ subject }: { subject: Subject }) {
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="glass rounded-xl p-8 text-center mb-6">
           <Award size={48} className="mx-auto mb-4" style={{ color: subject.color }} />
           <h2 className="text-2xl font-bold text-white mb-2">Exam Complete</h2>
-          <div className="flex items-center justify-center gap-6 mb-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-4">
             <div>
-              <p className="text-3xl font-black" style={{ color: subject.color }}>{totalScore}/{totalMax}</p>
+              <p className="text-2xl sm:text-3xl font-black" style={{ color: subject.color }}>{totalScore}/{totalMax}</p>
               <p className="text-xs text-zinc-500">Points</p>
             </div>
-            <div className="w-px h-12 bg-white/10" />
+            <div className="hidden sm:block w-px h-10 bg-white/10" />
             <div>
-              <p className="text-3xl font-black" style={{ color: subject.color }}>{pct}%</p>
+              <p className="text-2xl sm:text-3xl font-black" style={{ color: subject.color }}>{pct}%</p>
               <p className="text-xs text-zinc-500">Percent</p>
             </div>
-            <div className="w-px h-12 bg-white/10" />
+            <div className="hidden sm:block w-px h-10 bg-white/10" />
             <div>
-              <p className="text-3xl font-black" style={{ color: subject.color }}>Grade {grade}</p>
+              <p className="text-2xl sm:text-3xl font-black" style={{ color: subject.color }}>Grade {grade}</p>
               <p className="text-xs text-zinc-500">IB Grade</p>
             </div>
           </div>
@@ -262,27 +262,28 @@ export default function PastPapersTab({ subject }: { subject: Subject }) {
     <div>
       {/* Timer Bar */}
       <div className={`glass-strong rounded-xl p-4 mb-6 sticky top-0 z-30 ${timeWarning ? 'border-red-500/50' : ''}`}>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Timer size={20} className={timeWarning ? 'text-red-400 animate-pulse' : subject.colorClass} />
-            <span className={`text-2xl font-mono font-bold ${timeWarning ? 'text-red-400' : 'text-white'}`}>
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Timer size={18} className={`shrink-0 ${timeWarning ? 'text-red-400 animate-pulse' : subject.colorClass}`} />
+            <span className={`text-lg sm:text-2xl font-mono font-bold ${timeWarning ? 'text-red-400' : 'text-white'}`}>
               {formatTime(timeLeft)}
             </span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             <button
               onClick={() => setTimerRunning(!timerRunning)}
-              className="p-2 rounded-lg bg-white/10 text-zinc-300 hover:text-white transition-all"
+              className="p-2.5 rounded-lg bg-white/10 text-zinc-300 hover:text-white transition-all"
             >
               {timerRunning ? <Pause size={16} /> : <Play size={16} />}
             </button>
             <button
               onClick={submitExam}
-              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-white"
+              className="flex items-center gap-1.5 px-3 sm:px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium text-white"
               style={{ background: subject.color }}
             >
               <Send size={14} />
-              Submit
+              <span className="hidden sm:inline">Submit</span>
+              <span className="sm:hidden">Done</span>
             </button>
           </div>
         </div>

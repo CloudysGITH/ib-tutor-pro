@@ -86,19 +86,20 @@ export default function SubjectPage({ params }: { params: Promise<{ slug: string
       </motion.div>
 
       {/* Tabs */}
-      <div className="flex gap-1 mb-6 overflow-x-auto pb-2 scrollbar-hide">
+      <div className="flex gap-1 mb-6 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 snap-x snap-mandatory">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
+            className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap transition-all snap-start ${
               activeTab === tab.id
                 ? `bg-white/10 text-white ${subject.glowClass}`
                 : "text-zinc-400 hover:text-white hover:bg-white/5"
             }`}
           >
-            <tab.icon size={16} />
-            {tab.label}
+            <tab.icon size={14} className="sm:w-4 sm:h-4" />
+            <span className="hidden sm:inline">{tab.label}</span>
+            <span className="sm:hidden">{tab.label.replace('Past Papers', 'Papers')}</span>
           </button>
         ))}
       </div>
