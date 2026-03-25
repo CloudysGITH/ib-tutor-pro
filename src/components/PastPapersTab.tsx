@@ -116,14 +116,31 @@ export default function PastPapersTab({ subject }: { subject: Subject }) {
             Past Papers — Exam Simulation
           </h2>
           <p className="text-sm text-zinc-400">
-            Select a past paper and complete it under real exam conditions with time tracking.
-            After submission, your work will be graded against the official markscheme.
+            Select a practice paper and complete it under real exam conditions with time tracking.
+            After submission, your work will be graded against the markscheme.
           </p>
+        </div>
+
+        {/* Disclaimer */}
+        <div className="glass rounded-xl p-4 mb-6 border border-amber-500/20">
+          <div className="flex items-start gap-3">
+            <AlertTriangle size={18} className="text-amber-400 shrink-0 mt-0.5" />
+            <div>
+              <p className="text-xs text-zinc-300 leading-relaxed">
+                <span className="font-semibold text-amber-400">Disclaimer:</span> These practice papers are IB-style exercises created for study purposes.
+                They are <span className="font-medium text-white">not official IB past papers</span> and are not affiliated with or endorsed by the International Baccalaureate Organization (IBO).
+              </p>
+              <p className="text-xs text-zinc-500 mt-2">
+                For official past papers, access the <span className="text-zinc-300">IB Questionbank</span> through your school&#39;s credentials
+                or visit <span className="text-zinc-300">ibo.org</span>. Additional resources available at <span className="text-zinc-300">Follet IB Store</span> and your school&#39;s IB Coordinator.
+              </p>
+            </div>
+          </div>
         </div>
 
         {papers.length === 0 ? (
           <div className="glass rounded-xl p-8 text-center text-zinc-400">
-            No past papers available for this subject yet.
+            No practice papers available for this subject yet.
           </div>
         ) : (
           <div className="grid gap-4">
@@ -132,7 +149,7 @@ export default function PastPapersTab({ subject }: { subject: Subject }) {
                 <div className="flex items-start justify-between mb-3">
                   <div>
                     <h3 className="font-medium text-white">{paper.title}</h3>
-                    <p className="text-xs text-zinc-500 mt-1">{paper.session} {paper.year} · {paper.paper}</p>
+                    <p className="text-xs text-zinc-500 mt-1">{paper.session} {paper.year} · {paper.paper} · <span className="text-amber-400/70">Practice Paper</span></p>
                   </div>
                   <span className={`text-xs font-bold px-2 py-1 rounded-full ${
                     subject.level === 'HL' ? 'bg-amber-500/20 text-amber-400' : 'bg-blue-500/20 text-blue-400'

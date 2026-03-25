@@ -139,6 +139,16 @@ export default function Home() {
           ))}
         </div>
       </motion.div>
+
+      {/* Footer Disclaimer */}
+      <div className="mt-16 mb-8 max-w-3xl mx-auto text-center border-t border-white/5 pt-8">
+        <p className="text-[11px] text-zinc-600 leading-relaxed">
+          IB Tutor Pro is an independent study tool and is not affiliated with, endorsed by, or connected to the
+          International Baccalaureate Organization (IBO). &quot;IB&quot; and &quot;International Baccalaureate&quot; are registered
+          trademarks of the IBO. All practice materials are original content created for educational purposes.
+          For official resources, visit <span className="text-zinc-500">ibo.org</span>.
+        </p>
+      </div>
     </div>
   );
 }
