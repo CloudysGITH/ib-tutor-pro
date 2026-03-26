@@ -10,497 +10,209 @@ export interface QuizQuestion {
 }
 
 export const quizQuestions: QuizQuestion[] = [
-  // DEUTSCH A (HL)
-  {
-    id: "de1",
-    subject: "deutsch",
-    topic: "Textanalyse",
-    question: "Welche rhetorische Figur liegt vor: 'Das Wasser fließt, die Zeit vergeht, das Leben schwindet.'?",
-    options: ["Metapher", "Parallelismus", "Alliteration", "Hyperbel"],
-    correctAnswer: 1,
-    explanation: "Ein Parallelismus liegt vor, wenn aufeinanderfolgende Sätze oder Satzteile die gleiche syntaktische Struktur aufweisen.",
-    difficulty: "medium"
-  },
-  {
-    id: "de2",
-    subject: "deutsch",
-    topic: "Literarische Gattungen",
-    question: "Welches Merkmal gehört NICHT zur Epik?",
-    options: ["Erzähler", "Regieanweisungen", "Prosa-Form", "Kapitelstruktur"],
-    correctAnswer: 1,
-    explanation: "Regieanweisungen sind ein Merkmal der Dramatik, nicht der Epik.",
-    difficulty: "easy"
-  },
-  {
-    id: "de3",
-    subject: "deutsch",
-    topic: "Textanalyse",
-    question: "Was beschreibt der Begriff 'Stilebene' in der Textanalyse?",
-    options: ["Die Anzahl der Absätze", "Das sprachliche Register eines Textes", "Die Schriftgröße", "Den Rhythmus"],
-    correctAnswer: 1,
-    explanation: "Die Stilebene beschreibt das sprachliche Register (gehoben, neutral, umgangssprachlich).",
-    difficulty: "easy"
-  },
-  {
-    id: "de4",
-    subject: "deutsch",
-    topic: "Sprache und Identität",
-    question: "Was versteht man unter 'Code-Switching'?",
-    options: ["Übersetzen eines Textes", "Wechsel zwischen Sprachen oder Sprachvarietäten", "Verschlüsselung von Nachrichten", "Umschreiben von Texten"],
-    correctAnswer: 1,
-    explanation: "Code-Switching bezeichnet den Wechsel zwischen verschiedenen Sprachen oder Sprachvarietäten innerhalb eines Gesprächs.",
-    difficulty: "medium"
-  },
-  {
-    id: "de5",
-    subject: "deutsch",
-    topic: "Kreatives Schreiben",
-    question: "Welches Element ist für eine überzeugende Rede am wichtigsten?",
-    options: ["Möglichst viele Fachbegriffe", "Rhetorische Mittel und Publikumsbezug", "Ausschließlich Fakten", "Lange Sätze"],
-    correctAnswer: 1,
-    explanation: "Eine überzeugende Rede nutzt rhetorische Mittel und stellt Bezug zum Publikum her.",
-    difficulty: "medium"
-  },
-  {
-    id: "de6",
-    subject: "deutsch",
-    topic: "Mündliche Prüfung (IO)",
-    question: "Was ist die Kernaufgabe beim IB Individual Oral (IO)?",
-    options: ["Ein Gedicht auswendig vortragen", "Einen literarischen und einen nicht-literarischen Text vergleichend analysieren", "Eine Buchzusammenfassung geben", "Einen Dialog vorspielen"],
-    correctAnswer: 1,
-    explanation: "Beim IO wird eine vergleichende Analyse eines literarischen und eines nicht-literarischen Textes anhand einer globalen Fragestellung präsentiert.",
-    difficulty: "hard"
-  },
-  {
-    id: "de7",
-    subject: "deutsch",
-    topic: "HL Essay",
-    question: "Wie lang sollte der HL Essay im Fach Deutsch A sein?",
-    options: ["800-1000 Wörter", "1200-1500 Wörter", "2000-2500 Wörter", "500-700 Wörter"],
-    correctAnswer: 1,
-    explanation: "Der HL Essay ist eine vertiefende Analyse von 1200-1500 Wörtern über ein selbstgewähltes literarisches Thema.",
-    difficulty: "easy"
-  },
-  {
-    id: "de8",
-    subject: "deutsch",
-    topic: "Textanalyse",
-    question: "Was ist eine 'Anapher'?",
-    options: ["Ein Verweis auf ein späteres Textelement", "Wiederholung eines Wortes am Satzanfang", "Ein Widerspruch in sich", "Eine bildhafte Übertreibung"],
-    correctAnswer: 1,
-    explanation: "Eine Anapher ist die Wiederholung eines Wortes oder einer Wortgruppe am Anfang aufeinanderfolgender Sätze oder Verse.",
-    difficulty: "medium"
-  },
+  // DEUTSCH A (HL) — Stilmittel & Textanalyse
+  { id: "de1", subject: "deutsch", topic: "Stilmittel & Textanalyse", question: "Welche Figur: 'Das Wasser fließt, die Zeit vergeht, das Leben schwindet.'?", options: ["Metapher", "Parallelismus", "Alliteration", "Hyperbel"], correctAnswer: 1, explanation: "Parallelismus: aufeinanderfolgende Sätze/Satzteile haben die gleiche syntaktische Struktur.", difficulty: "medium" },
+  { id: "de2", subject: "deutsch", topic: "Stilmittel & Textanalyse", question: "Was ist eine Anapher?", options: ["Verweis auf späteres Textelement", "Wiederholung am Satzanfang", "Widerspruch in sich", "Bildhafte Übertreibung"], correctAnswer: 1, explanation: "Anapher: Wiederholung eines Wortes/einer Wortgruppe am Anfang aufeinanderfolgender Sätze. Steigernde Wirkung.", difficulty: "easy" },
+  { id: "de3", subject: "deutsch", topic: "Stilmittel & Textanalyse", question: "Was ist eine Alliteration?", options: ["Wiederholung des Anfangslauts", "Übertreibung", "Vermenschlichung", "Gegensatz"], correctAnswer: 0, explanation: "Alliteration: gleicher Anfangslaut bei aufeinanderfolgenden Wörtern. Z.B. 'Milch macht müde Männer munter'.", difficulty: "easy" },
+  { id: "de4", subject: "deutsch", topic: "Stilmittel & Textanalyse", question: "Was beschreibt die 'Stilebene'?", options: ["Absatzzahl", "Sprachliches Register (gehoben/neutral/umgangssprachlich)", "Schriftgröße", "Rhythmus"], correctAnswer: 1, explanation: "Stilebene = sprachliches Register. Gehoben (literarisch), neutral (sachlich), umgangssprachlich (alltäglich).", difficulty: "easy" },
+  { id: "de5", subject: "deutsch", topic: "Stilmittel & Textanalyse", question: "'Er war ein Löwe im Kampf' ist ein Beispiel für:", options: ["Vergleich", "Metapher", "Personifikation", "Litotes"], correctAnswer: 1, explanation: "Metapher: übertragene Bedeutung ohne 'wie'. Bei einem Vergleich stünde 'wie ein Löwe'.", difficulty: "medium" },
+  { id: "de6", subject: "deutsch", topic: "Stilmittel & Textanalyse", question: "Was ist eine Antithese?", options: ["Übertreibung", "Gegenüberstellung von Gegensätzen", "Wiederholung", "Frage ohne Antwort"], correctAnswer: 1, explanation: "Antithese: Gegenüberstellung gegensätzlicher Begriffe/Gedanken. Z.B. 'Arm und reich', 'Himmel und Hölle'.", difficulty: "medium" },
+  { id: "de7", subject: "deutsch", topic: "Stilmittel & Textanalyse", question: "Was ist die PEE-Methode?", options: ["Plan, Execute, Evaluate", "Point, Evidence, Explanation", "Problem, Experiment, Ergebnis", "Prüfen, Erklären, Ergänzen"], correctAnswer: 1, explanation: "Point (These), Evidence (Textbeleg/Zitat), Explanation (Wirkung erklären). Grundstruktur der Textanalyse.", difficulty: "easy" },
+  // Deutsch A — Gattungen
+  { id: "de8", subject: "deutsch", topic: "Literarische Gattungen", question: "Welches Merkmal gehört NICHT zur Epik?", options: ["Erzähler", "Regieanweisungen", "Prosa-Form", "Kapitelstruktur"], correctAnswer: 1, explanation: "Regieanweisungen sind ein Merkmal der Dramatik, nicht der Epik.", difficulty: "easy" },
+  { id: "de9", subject: "deutsch", topic: "Literarische Gattungen", question: "Was ist ein auktorialer Erzähler?", options: ["Erzählt in der 1. Person", "Allwissender Erzähler, kennt Gedanken aller Figuren", "Erzählt nur Beobachtbares", "Die Hauptfigur selbst"], correctAnswer: 1, explanation: "Auktorialer Erzähler: allwissend, kann in alle Figuren blicken, kommentiert das Geschehen.", difficulty: "medium" },
+  // Deutsch A — Sprache
+  { id: "de10", subject: "deutsch", topic: "Sprache und Identität", question: "Was ist Code-Switching?", options: ["Texte übersetzen", "Zwischen Sprachen/Varietäten wechseln", "Nachrichten verschlüsseln", "Texte umschreiben"], correctAnswer: 1, explanation: "Code-Switching: Wechsel zwischen Sprachen oder Varietäten je nach Situation (z.B. Dialekt zu Hause, Standard in der Schule).", difficulty: "medium" },
+  { id: "de11", subject: "deutsch", topic: "Sprache und Identität", question: "Was ist ein Soziolekt?", options: ["Regionale Sprachvarietät", "Sprachvarietät einer sozialen Gruppe", "Formale Schriftsprache", "Sprache der Medien"], correctAnswer: 1, explanation: "Soziolekt: Sprachvarietät einer bestimmten sozialen Gruppe (z.B. Jugendsprache, Fachsprache der Medizin).", difficulty: "medium" },
+  // Deutsch A — Areas of Exploration
+  { id: "de12", subject: "deutsch", topic: "Schlüsselkonzepte", question: "Welches ist KEIN IB-Schlüsselkonzept?", options: ["Identität", "Kreativität", "Grammatik", "Transformation"], correctAnswer: 2, explanation: "Die 7 Konzepte: Identität, Kultur, Kreativität, Kommunikation, Perspektive, Transformation, Repräsentation. Grammatik gehört nicht dazu.", difficulty: "easy" },
+  // Deutsch A — Assessment
+  { id: "de13", subject: "deutsch", topic: "Individual Oral (IO)", question: "Was ist die Kernaufgabe beim IO?", options: ["Gedicht vortragen", "Lit. + nicht-lit. Text vergleichend über globale Fragestellung analysieren", "Buchzusammenfassung", "Dialog vorspielen"], correctAnswer: 1, explanation: "IO: vergleichende Analyse eines literarischen und nicht-literarischen Textes anhand einer globalen Fragestellung.", difficulty: "medium" },
+  { id: "de14", subject: "deutsch", topic: "HL Essay", question: "Wie lang ist der HL Essay?", options: ["800-1000 Wörter", "1200-1500 Wörter", "2000-2500 Wörter", "500-700 Wörter"], correctAnswer: 1, explanation: "HL Essay: 1200-1500 Wörter analytischer Essay. Eigene Fragestellung über ein Werk. 20% der Note.", difficulty: "easy" },
+  { id: "de15", subject: "deutsch", topic: "Paper 1: Textanalyse", question: "Was analysiert man in Paper 1 HL?", options: ["Ein literarisches Werk", "Zwei unbekannte nicht-literarische Texte", "Einen Film", "Drei Gedichte"], correctAnswer: 1, explanation: "Paper 1 HL: Analyse von 2 unbekannten nicht-literarischen Texten anhand einer Leitfrage. 2h15. 35%.", difficulty: "medium" },
+  { id: "de16", subject: "deutsch", topic: "Paper 2: Vergleichender Aufsatz", question: "Paper 2 verlangt:", options: ["Zusammenfassung eines Werks", "Vergleichenden Aufsatz über mindestens 2 literarische Werke", "Kreatives Schreiben", "Mündliche Präsentation"], correctAnswer: 1, explanation: "Paper 2: Vergleichender Aufsatz, 2 Werke, 1 von 4 Fragen. 1h45. 25%.", difficulty: "easy" },
+  { id: "de17", subject: "deutsch", topic: "Textanforderungen HL", question: "Wie viele Werke studiert man im HL?", options: ["4", "5", "6", "8"], correctAnswer: 2, explanation: "HL: 6 Werke. Mind. 2 in Originalsprache (Deutsch), mind. 2 in Übersetzung. Verschiedene Gattungen.", difficulty: "easy" },
 
-  // BUSINESS MANAGEMENT (HL)
-  {
-    id: "bm1",
-    subject: "business",
-    topic: "Unit 1: Introduction to Business",
-    question: "Which of the following is NOT a type of business organization?",
-    options: ["Sole trader", "Partnership", "Cooperative", "SWOT analysis"],
-    correctAnswer: 3,
-    explanation: "SWOT analysis is a strategic planning tool, not a type of business organization.",
-    difficulty: "easy"
-  },
-  {
-    id: "bm2",
-    subject: "business",
-    topic: "Unit 2: Human Resource Management",
-    question: "According to Maslow's hierarchy of needs, which need must be satisfied first?",
-    options: ["Self-actualization", "Esteem needs", "Social needs", "Physiological needs"],
-    correctAnswer: 3,
-    explanation: "Physiological needs (food, water, shelter) are at the base of Maslow's pyramid and must be met first.",
-    difficulty: "easy"
-  },
-  {
-    id: "bm3",
-    subject: "business",
-    topic: "Unit 3: Finance & Accounts",
-    question: "What does the current ratio measure?",
-    options: ["Profitability", "Short-term liquidity", "Long-term solvency", "Market share"],
-    correctAnswer: 1,
-    explanation: "The current ratio (current assets / current liabilities) measures a firm's ability to pay short-term obligations.",
-    difficulty: "medium"
-  },
-  {
-    id: "bm4",
-    subject: "business",
-    topic: "Unit 4: Marketing",
-    question: "Which element of the marketing mix includes pricing strategies?",
-    options: ["Product", "Price", "Place", "Promotion"],
-    correctAnswer: 1,
-    explanation: "The 'Price' element of the marketing mix covers all pricing strategies and tactics.",
-    difficulty: "easy"
-  },
-  {
-    id: "bm5",
-    subject: "business",
-    topic: "Unit 5: Operations Management",
-    question: "What is the main advantage of Just-In-Time (JIT) production?",
-    options: ["Higher stock levels", "Reduced holding costs", "More warehouse space needed", "Slower production"],
-    correctAnswer: 1,
-    explanation: "JIT minimizes inventory holding costs by receiving goods only when needed in production.",
-    difficulty: "medium"
-  },
-  {
-    id: "bm6",
-    subject: "business",
-    topic: "Unit 3: Finance & Accounts",
-    question: "What is the break-even point?",
-    options: ["When profit is maximized", "When total revenue equals total costs", "When all debts are paid", "When market share reaches 50%"],
-    correctAnswer: 1,
-    explanation: "Break-even is where TR = TC, meaning the business is neither making a profit nor a loss.",
-    difficulty: "easy"
-  },
-  {
-    id: "bm7",
-    subject: "business",
-    topic: "HL Extension",
-    question: "What does Ansoff's Matrix help a business decide?",
-    options: ["Employee satisfaction", "Growth strategy direction", "Financial ratios", "Supply chain efficiency"],
-    correctAnswer: 1,
-    explanation: "Ansoff's Matrix helps businesses choose growth strategies: market penetration, development, product development, or diversification.",
-    difficulty: "hard"
-  },
-  {
-    id: "bm8",
-    subject: "business",
-    topic: "Unit 2: Human Resource Management",
-    question: "What is the difference between a democratic and autocratic leadership style?",
-    options: ["Democratic leaders make all decisions alone", "Autocratic leaders involve employees in decision-making", "Democratic leaders consult employees; autocratic leaders decide alone", "There is no difference"],
-    correctAnswer: 2,
-    explanation: "Democratic leadership involves employees in decision-making, while autocratic leaders make decisions without consultation.",
-    difficulty: "medium"
-  },
+  // BUSINESS MANAGEMENT (HL) — Unit 1
+  { id: "bm1", subject: "business", topic: "1.1 What is a Business?", question: "Which sector involves extracting raw materials?", options: ["Secondary", "Tertiary", "Primary", "Quaternary"], correctAnswer: 2, explanation: "Primary sector: extraction of raw materials (farming, mining, fishing). Secondary: manufacturing. Tertiary: services.", difficulty: "easy" },
+  { id: "bm2", subject: "business", topic: "1.2 Types of Business Entities", question: "What is a key disadvantage of a sole trader?", options: ["Limited liability", "Unlimited liability", "Shared decision-making", "Too many shareholders"], correctAnswer: 1, explanation: "Sole traders have unlimited liability — personal assets are at risk if the business fails.", difficulty: "easy" },
+  { id: "bm3", subject: "business", topic: "1.3 Business Objectives", question: "What does CSR stand for?", options: ["Cash Sales Revenue", "Corporate Social Responsibility", "Customer Service Rating", "Cost Saving Ratio"], correctAnswer: 1, explanation: "Corporate Social Responsibility — businesses acting ethically and considering their impact on society and the environment.", difficulty: "easy" },
+  { id: "bm4", subject: "business", topic: "1.4 Stakeholders", question: "Which group are internal stakeholders?", options: ["Customers and suppliers", "Government and media", "Employees and managers", "Competitors and banks"], correctAnswer: 2, explanation: "Internal stakeholders work within the business (employees, managers, shareholders). External: customers, suppliers, government.", difficulty: "easy" },
+  { id: "bm5", subject: "business", topic: "1.5 Growth and Evolution", question: "A diseconomy of scale occurs when:", options: ["Average costs decrease as output increases", "Average costs increase as output increases beyond optimal", "Revenue increases faster than costs", "Market share falls"], correctAnswer: 1, explanation: "Diseconomies of scale: communication problems, coordination issues, and low motivation cause average costs to rise.", difficulty: "medium" },
+  { id: "bm6", subject: "business", topic: "1.6 Multinational Companies", question: "Which is NOT a reason why companies become multinational?", options: ["Access to new markets", "Lower production costs", "Avoiding trade barriers", "Reducing total revenue"], correctAnswer: 3, explanation: "Companies go multinational to grow, reduce costs, access markets, and avoid tariffs — not to reduce revenue.", difficulty: "easy" },
+  // BM — Unit 2
+  { id: "bm7", subject: "business", topic: "2.3 Leadership", question: "Which leadership style gives employees full control?", options: ["Autocratic", "Paternalistic", "Democratic", "Laissez-faire"], correctAnswer: 3, explanation: "Laissez-faire: leader takes a hands-off approach, employees make decisions. Best for highly skilled, motivated teams.", difficulty: "easy" },
+  { id: "bm8", subject: "business", topic: "2.4 Motivation", question: "According to Maslow, which need comes after safety?", options: ["Physiological", "Esteem", "Social/belonging", "Self-actualization"], correctAnswer: 2, explanation: "Maslow's order: Physiological → Safety → Social/belonging → Esteem → Self-actualization.", difficulty: "easy" },
+  { id: "bm9", subject: "business", topic: "2.4 Motivation", question: "In Herzberg's theory, salary is a:", options: ["Motivator", "Hygiene factor", "Self-actualization need", "Growth factor"], correctAnswer: 1, explanation: "Salary is a hygiene factor — its absence causes dissatisfaction, but its presence alone doesn't motivate.", difficulty: "medium" },
+  { id: "bm10", subject: "business", topic: "2.4 Motivation", question: "Which is a financial reward method?", options: ["Job enrichment", "Commission", "Empowerment", "Teamwork"], correctAnswer: 1, explanation: "Commission is payment based on sales/performance. Job enrichment, empowerment, and teamwork are non-financial motivators.", difficulty: "easy" },
+  { id: "bm11", subject: "business", topic: "2.2 Organizational Structure", question: "A wide span of control means a manager:", options: ["Supervises few employees", "Supervises many employees", "Has many layers above them", "Has no subordinates"], correctAnswer: 1, explanation: "Wide span = many subordinates per manager. Leads to flatter structures, more delegation, but less direct control.", difficulty: "medium" },
+  // BM — Unit 3
+  { id: "bm12", subject: "business", topic: "3.3 Costs and Revenues", question: "Which is a fixed cost?", options: ["Raw materials", "Packaging", "Rent", "Delivery costs"], correctAnswer: 2, explanation: "Rent doesn't change with output — it's paid regardless of production level. Raw materials and packaging vary with output.", difficulty: "easy" },
+  { id: "bm13", subject: "business", topic: "3.5 Profitability Ratios", question: "Net profit margin = ?", options: ["Gross Profit / Revenue × 100", "Net Profit / Revenue × 100", "Revenue / Net Profit × 100", "Net Profit / Total Assets × 100"], correctAnswer: 1, explanation: "NPM = (Net Profit / Revenue) × 100%. Shows % of revenue kept as profit after ALL costs.", difficulty: "medium" },
+  { id: "bm14", subject: "business", topic: "3.5 Profitability Ratios", question: "An acid test ratio below 1 suggests:", options: ["Strong liquidity", "The business may not cover short-term debts without selling stock", "High profitability", "Excessive inventory"], correctAnswer: 1, explanation: "Acid test = (Current Assets - Inventory) / Current Liabilities. Below 1 = potential liquidity problem.", difficulty: "hard" },
+  { id: "bm15", subject: "business", topic: "3.7 Cash Flow", question: "A profitable business can still fail if:", options: ["Revenue is too high", "It runs out of cash (poor cash flow)", "It has too many customers", "Fixed costs are zero"], correctAnswer: 1, explanation: "Profit ≠ cash. A business can be profitable on paper but fail if it can't pay bills when due (cash flow crisis).", difficulty: "medium" },
+  { id: "bm16", subject: "business", topic: "3.8 Investment Appraisal", question: "What does NPV account for that payback period does not?", options: ["Total costs", "The time value of money", "Revenue", "Fixed costs"], correctAnswer: 1, explanation: "NPV discounts future cash flows to present value, recognizing that money today is worth more than money in the future.", difficulty: "hard" },
+  { id: "bm17", subject: "business", topic: "5.5 Break-Even Analysis", question: "Break-even quantity = ?", options: ["Revenue / Price", "Fixed Costs / Contribution per unit", "Variable Costs / Price", "Total Costs / Revenue"], correctAnswer: 1, explanation: "BEQ = FC / (SP - VC per unit). Contribution per unit = selling price minus variable cost per unit.", difficulty: "medium" },
+  // BM — Unit 4
+  { id: "bm18", subject: "business", topic: "4.2 Marketing Planning", question: "A niche market strategy targets:", options: ["The whole market", "A small, specific segment", "Only international customers", "Only online customers"], correctAnswer: 1, explanation: "Niche marketing targets a specific, well-defined segment. Less competition but smaller customer base.", difficulty: "easy" },
+  { id: "bm19", subject: "business", topic: "4.5 The Seven Ps", question: "In the BCG matrix, a 'Cash Cow' has:", options: ["High share, high growth", "High share, low growth", "Low share, high growth", "Low share, low growth"], correctAnswer: 1, explanation: "Cash Cows: high market share in a low-growth market. Generate steady profits with little investment needed.", difficulty: "medium" },
+  { id: "bm20", subject: "business", topic: "4.5 The Seven Ps", question: "Which pricing strategy sets a low initial price to gain market share?", options: ["Price skimming", "Penetration pricing", "Cost-plus pricing", "Premium pricing"], correctAnswer: 1, explanation: "Penetration pricing: low initial price to attract customers and gain market share quickly. Price often raised later.", difficulty: "medium" },
+  { id: "bm21", subject: "business", topic: "4.4 Market Research", question: "Which is primary research?", options: ["Reading industry reports", "Conducting customer surveys", "Analysing government statistics", "Reviewing competitor websites"], correctAnswer: 1, explanation: "Primary research: first-hand data collection (surveys, interviews, focus groups). Others are secondary (existing data).", difficulty: "easy" },
+  // BM — Unit 5
+  { id: "bm22", subject: "business", topic: "5.2 Operations Methods", question: "Which production method is most suitable for custom wedding cakes?", options: ["Mass production", "Batch production", "Job production", "Flow production"], correctAnswer: 2, explanation: "Job production: one-off, custom products. Each wedding cake is unique and made to customer specifications.", difficulty: "easy" },
+  { id: "bm23", subject: "business", topic: "5.3 Lean Production (HL)", question: "Kaizen means:", options: ["Zero defects", "Continuous improvement", "Just-in-time delivery", "Benchmarking"], correctAnswer: 1, explanation: "Kaizen (改善) = continuous improvement. Small, incremental changes by all employees to improve efficiency and quality.", difficulty: "medium" },
+  // BM — Toolkit
+  { id: "bm24", subject: "business", topic: "BM Toolkit", question: "In an Ansoff Matrix, diversification involves:", options: ["Existing product, existing market", "New product, existing market", "Existing product, new market", "New product, new market"], correctAnswer: 3, explanation: "Diversification: new product in a new market. Highest risk strategy but offers greatest growth potential.", difficulty: "medium" },
+  { id: "bm25", subject: "business", topic: "BM Toolkit", question: "STEEPLE analysis examines:", options: ["Internal strengths and weaknesses", "External macro-environmental factors", "Financial performance", "Customer satisfaction"], correctAnswer: 1, explanation: "STEEPLE: Social, Technological, Economic, Environmental, Political, Legal, Ethical — all external factors.", difficulty: "easy" },
+  { id: "bm26", subject: "business", topic: "BM Toolkit", question: "In a decision tree, the expected value is calculated by:", options: ["Adding all outcomes", "Multiplying probability by outcome for each branch, then summing", "Dividing revenue by costs", "Subtracting worst from best outcome"], correctAnswer: 1, explanation: "Expected Value = Σ(probability × financial outcome) for each branch. Then subtract cost of the decision.", difficulty: "hard" },
 
-  // DESIGN TECHNOLOGY (HL)
-  {
-    id: "dst1",
-    subject: "design-tech",
-    topic: "Human Factors & Ergonomics",
-    question: "What is the primary goal of ergonomic design?",
-    options: ["Aesthetic appeal", "Cost reduction", "User comfort and efficiency", "Mass production"],
-    correctAnswer: 2,
-    explanation: "Ergonomic design aims to optimize human well-being, comfort, and overall system performance.",
-    difficulty: "easy"
-  },
-  {
-    id: "dst2",
-    subject: "design-tech",
-    topic: "Resource Management & Sustainability",
-    question: "What does 'cradle to cradle' design mean?",
-    options: ["Products designed to last forever", "Products designed so materials are continuously recycled", "Baby product design", "Traditional manufacturing"],
-    correctAnswer: 1,
-    explanation: "Cradle-to-cradle means designing products so that at end of life, materials become nutrients for new products.",
-    difficulty: "medium"
-  },
-  {
-    id: "dst3",
-    subject: "design-tech",
-    topic: "Modelling",
-    question: "What advantage does CAD have over hand-drawing in the design process?",
-    options: ["More artistic", "Easier to modify and share designs", "Cheaper", "No training needed"],
-    correctAnswer: 1,
-    explanation: "CAD allows easy modification, sharing, 3D visualization, and integration with CAM systems.",
-    difficulty: "easy"
-  },
-  {
-    id: "dst4",
-    subject: "design-tech",
-    topic: "Raw Materials",
-    question: "Which material property describes resistance to scratching?",
-    options: ["Tensile strength", "Hardness", "Ductility", "Elasticity"],
-    correctAnswer: 1,
-    explanation: "Hardness is the resistance of a material to surface indentation or scratching.",
-    difficulty: "medium"
-  },
-  {
-    id: "dst5",
-    subject: "design-tech",
-    topic: "Innovation & Design",
-    question: "What is the difference between invention and innovation?",
-    options: ["They mean the same thing", "Invention is creating something new; innovation is applying it commercially", "Innovation comes first", "Invention is always patented"],
-    correctAnswer: 1,
-    explanation: "Invention creates something new; innovation successfully brings it to market or applies it in a new way.",
-    difficulty: "medium"
-  },
-  {
-    id: "dst6",
-    subject: "design-tech",
-    topic: "Classic Design",
-    question: "Which design movement emphasized 'form follows function'?",
-    options: ["Art Nouveau", "Bauhaus", "Art Deco", "Pop Art"],
-    correctAnswer: 1,
-    explanation: "The Bauhaus movement championed functional, minimalist design where form follows function.",
-    difficulty: "hard"
-  },
-  {
-    id: "dst7",
-    subject: "design-tech",
-    topic: "Human Factors & Ergonomics",
-    question: "What are anthropometric data used for in design?",
-    options: ["Color selection", "Sizing products based on human body measurements", "Costing", "Marketing"],
-    correctAnswer: 1,
-    explanation: "Anthropometric data are measurements of the human body used to design products that fit users correctly.",
-    difficulty: "medium"
-  },
-  {
-    id: "dst8",
-    subject: "design-tech",
-    topic: "Resource Management & Sustainability",
-    question: "What is planned obsolescence?",
-    options: ["Planning for sustainability", "Designing products to have a limited lifespan", "Planning production schedules", "Environmental impact assessment"],
-    correctAnswer: 1,
-    explanation: "Planned obsolescence is deliberately designing products with a limited useful life to encourage repeat purchases.",
-    difficulty: "easy"
-  },
+  // DESIGN TECHNOLOGY (HL) — Topics 1-3
+  { id: "dst1", subject: "design-tech", topic: "1.1 Ergonomics", question: "What is the primary goal of ergonomic design?", options: ["Aesthetic appeal", "Cost reduction", "User comfort and efficiency", "Mass production"], correctAnswer: 2, explanation: "Ergonomic design optimizes human well-being, comfort, and overall system performance.", difficulty: "easy" },
+  { id: "dst2", subject: "design-tech", topic: "1.1 Ergonomics", question: "Why do designers typically use the 5th-95th percentile range?", options: ["To save money", "To accommodate 90% of the target population", "To make products larger", "Because 100% is impossible to measure"], correctAnswer: 1, explanation: "Designing for the 5th-95th percentile accommodates 90% of users. Extremes would make products impractical for most.", difficulty: "medium" },
+  { id: "dst3", subject: "design-tech", topic: "1.2 Psychological Factors", question: "A user expects a door to push open because of its flat plate. This is an example of:", options: ["Anthropometrics", "Affordance", "Ergonomics", "Obsolescence"], correctAnswer: 1, explanation: "Affordance: the design feature suggests its function. A flat plate affords pushing; a handle affords pulling.", difficulty: "medium" },
+  { id: "dst4", subject: "design-tech", topic: "2.2 Waste Mitigation", question: "What is planned obsolescence?", options: ["Planning for sustainability", "Designing products with a limited lifespan to encourage replacement", "Planning production schedules", "Environmental assessment"], correctAnswer: 1, explanation: "Planned obsolescence deliberately limits product lifespan to drive repeat purchases. Ethical concerns vs business model.", difficulty: "easy" },
+  { id: "dst5", subject: "design-tech", topic: "2.5 Green Design", question: "What does 'cradle to cradle' design mean?", options: ["Products last forever", "Materials are continuously recycled into new products", "Baby product design", "Traditional manufacturing"], correctAnswer: 1, explanation: "Cradle-to-cradle: at end of life, materials become nutrients for new products — biological cycle or technical cycle. Zero waste.", difficulty: "medium" },
+  { id: "dst6", subject: "design-tech", topic: "2.5 Green Design", question: "An LCA examines environmental impact at which stages?", options: ["Only manufacturing", "Only disposal", "All stages from raw material to disposal", "Only transport"], correctAnswer: 2, explanation: "Life Cycle Assessment covers: raw material extraction → manufacturing → distribution → use → end of life (disposal/recycling).", difficulty: "medium" },
+  { id: "dst7", subject: "design-tech", topic: "3.1 Modelling", question: "What is an advantage of CAD over hand drawing?", options: ["More artistic expression", "Easier to modify, share, and integrate with CAM", "Cheaper equipment", "No training needed"], correctAnswer: 1, explanation: "CAD allows easy modifications, 3D visualization, simulation, file sharing, and integration with CAM for manufacturing.", difficulty: "easy" },
+  // DT — Topics 4-5
+  { id: "dst8", subject: "design-tech", topic: "4.1 Material Properties", question: "Which property describes a material's resistance to scratching?", options: ["Tensile strength", "Hardness", "Ductility", "Elasticity"], correctAnswer: 1, explanation: "Hardness: resistance to surface indentation or scratching. Tested with Mohs scale or Brinell/Vickers tests.", difficulty: "easy" },
+  { id: "dst9", subject: "design-tech", topic: "4.2 Materials", question: "Which material is a thermoplastic?", options: ["Epoxy resin", "Melamine", "ABS (Acrylonitrile Butadiene Styrene)", "Polyester resin"], correctAnswer: 2, explanation: "ABS is a thermoplastic (can be reheated and reshaped). Epoxy, melamine, and polyester resin are thermosets.", difficulty: "medium" },
+  { id: "dst10", subject: "design-tech", topic: "4.2 Materials", question: "Why is carbon fibre reinforced polymer (CFRP) used in aerospace?", options: ["It's cheap", "High strength-to-weight ratio", "Easy to recycle", "Magnetic properties"], correctAnswer: 1, explanation: "CFRP has an excellent strength-to-weight ratio — very strong yet lightweight, ideal for aircraft and racing cars.", difficulty: "medium" },
+  { id: "dst11", subject: "design-tech", topic: "4.3 Scale of Production", question: "Which production method has the lowest unit cost for high volumes?", options: ["Job production", "Batch production", "Mass/flow production", "One-off production"], correctAnswer: 2, explanation: "Mass production has high setup costs but very low unit costs due to economies of scale and continuous output.", difficulty: "easy" },
+  { id: "dst12", subject: "design-tech", topic: "5.1 Innovation", question: "The smartphone is an example of:", options: ["Market-pull only", "Technology-push only", "Both market-pull and technology-push", "Neither"], correctAnswer: 2, explanation: "Smartphones: technology-push (touchscreens, processors) met market-pull (consumer desire for mobile connectivity).", difficulty: "medium" },
+  { id: "dst13", subject: "design-tech", topic: "5.4 Rogers' Diffusion", question: "According to Rogers, which group adopts innovations last?", options: ["Early Adopters", "Early Majority", "Late Majority", "Laggards"], correctAnswer: 3, explanation: "Laggards (16%) are the last to adopt. They are traditionalists, skeptical of change, and often older.", difficulty: "easy" },
+  // DT — Topic 6 + HL Extensions
+  { id: "dst14", subject: "design-tech", topic: "6. Classic Design", question: "Which movement emphasized 'form follows function'?", options: ["Art Nouveau", "Bauhaus", "Memphis", "Pop Art"], correctAnswer: 1, explanation: "Bauhaus (1919-1933): form follows function, minimalism, geometric shapes, uniting art/craft/technology.", difficulty: "medium" },
+  { id: "dst15", subject: "design-tech", topic: "6. Classic Design", question: "Memphis Design (1980s) is characterized by:", options: ["Minimalism and neutrals", "Bold colours, geometric shapes, postmodern playfulness", "Natural materials only", "Strict functionality"], correctAnswer: 1, explanation: "Memphis rejected minimalism — bold colours, clashing patterns, plastic laminates. Anti-functional, postmodern aesthetic.", difficulty: "hard" },
+  { id: "dst16", subject: "design-tech", topic: "7. User-Centred Design (HL)", question: "Which is NOT a usability goal?", options: ["Effectiveness", "Profitability", "Learnability", "Satisfaction"], correctAnswer: 1, explanation: "Usability goals: effectiveness, efficiency, satisfaction, learnability, memorability, error prevention. Profitability is a business goal.", difficulty: "medium" },
+  { id: "dst17", subject: "design-tech", topic: "8. Sustainability (HL)", question: "The triple bottom line measures:", options: ["Three financial metrics", "People, Planet, Profit", "Three production methods", "Three marketing strategies"], correctAnswer: 1, explanation: "Triple bottom line: social (people), environmental (planet), and financial (profit) performance of a business.", difficulty: "easy" },
+  { id: "dst18", subject: "design-tech", topic: "8. Sustainability (HL)", question: "Biomimicry in design means:", options: ["Using biological materials only", "Imitating nature's strategies to solve design problems", "Designing biological organisms", "Manufacturing in natural environments"], correctAnswer: 1, explanation: "Biomimicry learns from nature's solutions. Examples: Velcro (burrs), bullet train (kingfisher), ventilation (termite mounds).", difficulty: "medium" },
+  { id: "dst19", subject: "design-tech", topic: "10. Commercial Production (HL)", question: "What is the key principle of TQM?", options: ["Only managers are responsible for quality", "Quality is checked at the end only", "Every employee is responsible for continuous quality improvement", "Quality is outsourced"], correctAnswer: 2, explanation: "TQM: total quality management — all employees at every level focus on continuous improvement and zero defects.", difficulty: "medium" },
 
-  // ENGLISH A L&L (SL)
-  {
-    id: "en1",
-    subject: "english-ll",
-    topic: "Readers, Writers & Texts",
-    question: "What is the purpose of a rhetorical question in a persuasive text?",
-    options: ["To get a direct answer", "To engage the reader and make them think", "To confuse the audience", "To end a paragraph"],
-    correctAnswer: 1,
-    explanation: "Rhetorical questions engage readers by prompting them to think about the answer, reinforcing the writer's point.",
-    difficulty: "easy"
-  },
-  {
-    id: "en2",
-    subject: "english-ll",
-    topic: "Time and Space",
-    question: "What does 'context' refer to in textual analysis?",
-    options: ["The font used", "The historical, social, and cultural circumstances around a text", "The page number", "The word count"],
-    correctAnswer: 1,
-    explanation: "Context includes the historical, social, cultural, and political circumstances that influence how a text is created and received.",
-    difficulty: "easy"
-  },
-  {
-    id: "en3",
-    subject: "english-ll",
-    topic: "Paper 1: Guided Analysis",
-    question: "In Paper 1, what should you focus on when analyzing an unseen text?",
-    options: ["Only the plot summary", "Language, structure, tone, audience, and purpose", "Personal opinion only", "The author's biography"],
-    correctAnswer: 1,
-    explanation: "Paper 1 requires analysis of language choices, structural features, tone, intended audience, and purpose.",
-    difficulty: "medium"
-  },
-  {
-    id: "en4",
-    subject: "english-ll",
-    topic: "Paper 2: Comparative Essay",
-    question: "What is essential in a Paper 2 comparative essay?",
-    options: ["Summarizing both works", "Drawing meaningful connections between at least two literary works", "Only analyzing one text", "Writing a creative response"],
-    correctAnswer: 1,
-    explanation: "Paper 2 requires comparing and contrasting at least two literary works, exploring connections in themes, techniques, or context.",
-    difficulty: "medium"
-  },
-  {
-    id: "en5",
-    subject: "english-ll",
-    topic: "Readers, Writers & Texts",
-    question: "What literary device is 'the wind whispered through the trees'?",
-    options: ["Simile", "Personification", "Hyperbole", "Oxymoron"],
-    correctAnswer: 1,
-    explanation: "Personification gives human qualities (whispering) to a non-human entity (wind).",
-    difficulty: "easy"
-  },
-  {
-    id: "en6",
-    subject: "english-ll",
-    topic: "Intertextuality",
-    question: "What is intertextuality?",
-    options: ["Writing between the lines", "The relationship between texts and how they reference each other", "Using text messages", "A type of font"],
-    correctAnswer: 1,
-    explanation: "Intertextuality refers to how texts reference, build upon, or are connected to other texts.",
-    difficulty: "medium"
-  },
-  {
-    id: "en7",
-    subject: "english-ll",
-    topic: "Individual Oral (IO)",
-    question: "In the IO, what global issue must be explored?",
-    options: ["A local school issue", "A broad transnational topic connecting a literary and non-literary text", "A personal anecdote", "A historical date"],
-    correctAnswer: 1,
-    explanation: "The IO requires exploring a global issue through the lens of one literary and one non-literary text.",
-    difficulty: "hard"
-  },
-  {
-    id: "en8",
-    subject: "english-ll",
-    topic: "Readers, Writers & Texts",
-    question: "What is the effect of using short, abrupt sentences in a text?",
-    options: ["Creates a calm, flowing rhythm", "Creates tension, urgency, or emphasis", "Makes the text longer", "Shows the writer is lazy"],
-    correctAnswer: 1,
-    explanation: "Short sentences create a staccato effect that builds tension, urgency, or draws attention to key points.",
-    difficulty: "medium"
-  },
+  // ENGLISH A L&L (SL) — Literary Devices
+  { id: "en1", subject: "english-ll", topic: "Literary & Rhetorical Devices", question: "What is the purpose of a rhetorical question?", options: ["To get a direct answer", "To engage the reader and make them think", "To confuse the audience", "To end a paragraph"], correctAnswer: 1, explanation: "Rhetorical questions engage readers by prompting thought, reinforcing the writer's point without expecting an answer.", difficulty: "easy" },
+  { id: "en2", subject: "english-ll", topic: "Literary & Rhetorical Devices", question: "'The wind whispered through the trees' is an example of:", options: ["Simile", "Personification", "Hyperbole", "Oxymoron"], correctAnswer: 1, explanation: "Personification gives human qualities (whispering) to a non-human entity (wind).", difficulty: "easy" },
+  { id: "en3", subject: "english-ll", topic: "Literary & Rhetorical Devices", question: "What is the effect of short, abrupt sentences?", options: ["Calm, flowing rhythm", "Tension, urgency, or emphasis", "Makes text longer", "Shows laziness"], correctAnswer: 1, explanation: "Short sentences create a staccato effect that builds tension, urgency, or draws attention to key points.", difficulty: "easy" },
+  { id: "en4", subject: "english-ll", topic: "Literary & Rhetorical Devices", question: "What is the difference between a simile and a metaphor?", options: ["They are the same", "Simile uses 'like/as', metaphor states something IS something else", "Metaphor uses 'like/as'", "Simile is only in poetry"], correctAnswer: 1, explanation: "Simile: 'brave like a lion' (comparison with like/as). Metaphor: 'he is a lion' (direct equation without like/as).", difficulty: "easy" },
+  { id: "en5", subject: "english-ll", topic: "Literary & Rhetorical Devices", question: "What is dramatic irony?", options: ["Sarcasm", "When the audience knows something a character doesn't", "When a character lies", "Exaggeration"], correctAnswer: 1, explanation: "Dramatic irony: the audience/reader has information a character lacks, creating tension or humour.", difficulty: "medium" },
+  // English — Areas of Exploration
+  { id: "en6", subject: "english-ll", topic: "Time and Space", question: "What does 'context' refer to in textual analysis?", options: ["The font used", "Historical, social, cultural circumstances around a text", "Page number", "Word count"], correctAnswer: 1, explanation: "Context includes historical, social, cultural, and political circumstances influencing text creation and reception.", difficulty: "easy" },
+  { id: "en7", subject: "english-ll", topic: "Intertextuality: Connecting Texts", question: "What is intertextuality?", options: ["Writing between lines", "How texts reference and relate to each other", "Using text messages", "A font type"], correctAnswer: 1, explanation: "Intertextuality: how texts reference, build upon, or connect to other texts, revealing shared or divergent concerns.", difficulty: "medium" },
+  { id: "en8", subject: "english-ll", topic: "Seven Key Concepts", question: "Which is NOT one of the 7 IB key concepts?", options: ["Identity", "Creativity", "Grammar", "Representation"], correctAnswer: 2, explanation: "The 7 concepts: Identity, Culture, Creativity, Communication, Perspective, Transformation, Representation.", difficulty: "easy" },
+  // English — Language Analysis
+  { id: "en9", subject: "english-ll", topic: "Language Analysis Skills", question: "What is the difference between connotation and denotation?", options: ["They mean the same", "Denotation = literal meaning, connotation = associated feelings/ideas", "Connotation = dictionary definition", "Denotation = emotional meaning"], correctAnswer: 1, explanation: "Denotation: literal definition. Connotation: emotional/cultural associations. 'Home' denotes dwelling, connotes warmth.", difficulty: "medium" },
+  { id: "en10", subject: "english-ll", topic: "Language Analysis Skills", question: "Ethos, pathos, logos are:", options: ["Greek philosophers", "Three modes of persuasion (credibility, emotion, logic)", "Types of poetry", "Narrative techniques"], correctAnswer: 1, explanation: "Ethos: credibility/authority. Pathos: emotional appeal. Logos: logical reasoning. Aristotle's persuasion framework.", difficulty: "medium" },
+  { id: "en11", subject: "english-ll", topic: "Text Types & Conventions", question: "What distinguishes an editorial from a news article?", options: ["Editorials are shorter", "Editorials express opinion, news articles report facts", "News articles use persuasion", "No difference"], correctAnswer: 1, explanation: "Editorial: opinion piece, persuasive, represents the publication's stance. News article: factual, objective reporting.", difficulty: "medium" },
+  // English — Assessment
+  { id: "en12", subject: "english-ll", topic: "Paper 1: Guided Textual Analysis", question: "In Paper 1 SL, how many texts do you analyse?", options: ["Two", "One", "Three", "Four"], correctAnswer: 1, explanation: "SL Paper 1: analyse 1 unseen text. HL Paper 1: analyse 2 unseen texts. Focus on language, structure, tone.", difficulty: "easy" },
+  { id: "en13", subject: "english-ll", topic: "Paper 2: Comparative Essay", question: "Paper 2 requires:", options: ["Summarizing one work", "Comparing at least 2 literary works in response to a question", "Creative writing", "Oral presentation"], correctAnswer: 1, explanation: "Paper 2: comparative essay on at least 2 literary works, responding to 1 of 4 questions.", difficulty: "easy" },
+  { id: "en14", subject: "english-ll", topic: "Individual Oral (IO)", question: "In the IO, what must you connect the two texts through?", options: ["A local school issue", "A global issue", "A personal anecdote", "A historical date"], correctAnswer: 1, explanation: "The IO connects 1 literary + 1 non-literary text through a global issue (broad, transnational, significant).", difficulty: "medium" },
+  { id: "en15", subject: "english-ll", topic: "Individual Oral (IO)", question: "How is the IO structured?", options: ["20 min presentation", "10 min presentation + 5 min Q&A", "5 min presentation + 10 min Q&A", "Written essay"], correctAnswer: 1, explanation: "IO: 10 minutes prepared presentation + 5 minutes follow-up questions from the teacher. 30% of final grade.", difficulty: "easy" },
+  { id: "en16", subject: "english-ll", topic: "Text Requirements SL", question: "How many works must SL students study?", options: ["4", "6", "8", "3"], correctAnswer: 1, explanation: "SL: 6 works total. At least 2 literary forms, 1 in translation, 2 from Prescribed Reading List.", difficulty: "easy" },
 
-  // MATH AI (SL)
-  {
-    id: "ma1",
-    subject: "math-ai",
-    topic: "Number & Algebra",
-    question: "What is the sum of the geometric series 2 + 6 + 18 + 54 with ratio 3?",
-    options: ["80", "72", "60", "90"],
-    correctAnswer: 0,
-    explanation: "Sum = a(r^n - 1)/(r - 1) = 2(3^4 - 1)/(3 - 1) = 2(80)/2 = 80",
-    difficulty: "medium"
-  },
-  {
-    id: "ma2",
-    subject: "math-ai",
-    topic: "Functions",
-    question: "What type of function models exponential growth?",
-    options: ["f(x) = mx + b", "f(x) = ax² + bx + c", "f(x) = a · b^x where b > 1", "f(x) = a/x"],
-    correctAnswer: 2,
-    explanation: "Exponential growth is modeled by f(x) = a · b^x where b > 1 and a > 0.",
-    difficulty: "easy"
-  },
-  {
-    id: "ma3",
-    subject: "math-ai",
-    topic: "Geometry & Trigonometry",
-    question: "In a right triangle with angle θ, sin(θ) is defined as:",
-    options: ["Adjacent / Hypotenuse", "Opposite / Hypotenuse", "Opposite / Adjacent", "Hypotenuse / Opposite"],
-    correctAnswer: 1,
-    explanation: "sin(θ) = opposite side / hypotenuse (SOH-CAH-TOA).",
-    difficulty: "easy"
-  },
-  {
-    id: "ma4",
-    subject: "math-ai",
-    topic: "Statistics & Probability",
-    question: "What is the probability of rolling a 6 on a fair die?",
-    options: ["1/3", "1/6", "1/2", "1/12"],
-    correctAnswer: 1,
-    explanation: "A fair die has 6 equally likely outcomes, so P(6) = 1/6.",
-    difficulty: "easy"
-  },
-  {
-    id: "ma5",
-    subject: "math-ai",
-    topic: "Calculus",
-    question: "What is the derivative of f(x) = 3x²?",
-    options: ["3x", "6x", "6x²", "9x"],
-    correctAnswer: 1,
-    explanation: "Using the power rule: d/dx(3x²) = 3 · 2x = 6x.",
-    difficulty: "easy"
-  },
-  {
-    id: "ma6",
-    subject: "math-ai",
-    topic: "Statistics & Probability",
-    question: "What measure of central tendency is most affected by outliers?",
-    options: ["Mode", "Median", "Mean", "Range"],
-    correctAnswer: 2,
-    explanation: "The mean is pulled toward extreme values (outliers), while median and mode are more resistant.",
-    difficulty: "medium"
-  },
-  {
-    id: "ma7",
-    subject: "math-ai",
-    topic: "Number & Algebra",
-    question: "What is log₁₀(1000)?",
-    options: ["2", "3", "4", "10"],
-    correctAnswer: 1,
-    explanation: "log₁₀(1000) = 3, because 10³ = 1000.",
-    difficulty: "easy"
-  },
-  {
-    id: "ma8",
-    subject: "math-ai",
-    topic: "Calculus",
-    question: "What does the integral ∫f(x)dx represent geometrically?",
-    options: ["The slope of f(x)", "The area under the curve of f(x)", "The maximum of f(x)", "The tangent line"],
-    correctAnswer: 1,
-    explanation: "The definite integral represents the area under the curve of f(x) between two bounds.",
-    difficulty: "medium"
-  },
+  // MATH AI (SL) — Topic 1: Number and Algebra
+  { id: "ma1", subject: "math-ai", topic: "1.2 Arithmetic Sequences", question: "The first term of an arithmetic sequence is 5 and the common difference is 3. What is the 10th term?", options: ["30", "32", "35", "27"], correctAnswer: 1, explanation: "u₁₀ = u₁ + (n-1)d = 5 + 9×3 = 5 + 27 = 32.", difficulty: "easy" },
+  { id: "ma2", subject: "math-ai", topic: "1.3 Geometric Sequences", question: "A geometric sequence has u₁ = 4 and r = 2. What is the sum of the first 5 terms?", options: ["60", "124", "62", "128"], correctAnswer: 1, explanation: "S₅ = u₁(rⁿ-1)/(r-1) = 4(2⁵-1)/(2-1) = 4×31/1 = 124.", difficulty: "medium" },
+  { id: "ma3", subject: "math-ai", topic: "1.3 Geometric Sequences", question: "When does a geometric series have a sum to infinity?", options: ["When r > 1", "When r = 1", "When |r| < 1", "Always"], correctAnswer: 2, explanation: "A geometric series converges only when |r| < 1. Then S∞ = u₁/(1-r).", difficulty: "medium" },
+  { id: "ma4", subject: "math-ai", topic: "1.4 Financial Mathematics", question: "€1000 is invested at 5% annual compound interest. What is the value after 3 years?", options: ["€1150.00", "€1157.63", "€1152.50", "€1160.00"], correctAnswer: 1, explanation: "FV = 1000 × (1.05)³ = 1000 × 1.157625 = €1157.63.", difficulty: "medium" },
+  { id: "ma5", subject: "math-ai", topic: "1.5 Exponents and Logarithms", question: "What is log₁₀(1000)?", options: ["2", "3", "4", "10"], correctAnswer: 1, explanation: "log₁₀(1000) = 3 because 10³ = 1000.", difficulty: "easy" },
+  { id: "ma6", subject: "math-ai", topic: "1.5 Exponents and Logarithms", question: "Simplify: log₂(8) + log₂(4)", options: ["3", "5", "7", "12"], correctAnswer: 1, explanation: "log₂(8) = 3 and log₂(4) = 2. So 3 + 2 = 5. Or: log₂(8×4) = log₂(32) = 5.", difficulty: "medium" },
+  { id: "ma7", subject: "math-ai", topic: "1.6 Approximation and Error", question: "A measurement is 4.8 cm but the exact value is 5.0 cm. What is the percentage error?", options: ["4%", "3.8%", "4.2%", "5%"], correctAnswer: 0, explanation: "Percentage error = |4.8-5.0|/5.0 × 100% = 0.2/5.0 × 100% = 4%.", difficulty: "easy" },
 
-  // BIOLOGY (SL)
-  {
-    id: "bi1",
-    subject: "biology",
-    topic: "Cell Biology",
-    question: "Which organelle is the site of aerobic respiration?",
-    options: ["Nucleus", "Ribosome", "Mitochondria", "Golgi apparatus"],
-    correctAnswer: 2,
-    explanation: "Mitochondria are the 'powerhouses' of the cell where aerobic respiration occurs, producing ATP.",
-    difficulty: "easy"
-  },
-  {
-    id: "bi2",
-    subject: "biology",
-    topic: "Molecular Biology",
-    question: "What type of bond holds the two strands of DNA together?",
-    options: ["Covalent bonds", "Hydrogen bonds", "Ionic bonds", "Peptide bonds"],
-    correctAnswer: 1,
-    explanation: "Hydrogen bonds between complementary base pairs (A-T, G-C) hold the two DNA strands together.",
-    difficulty: "medium"
-  },
-  {
-    id: "bi3",
-    subject: "biology",
-    topic: "Genetics",
-    question: "What is the result of meiosis?",
-    options: ["2 identical diploid cells", "4 genetically unique haploid cells", "1 large cell", "2 haploid cells"],
-    correctAnswer: 1,
-    explanation: "Meiosis produces 4 genetically unique haploid cells through two divisions with crossing over.",
-    difficulty: "medium"
-  },
-  {
-    id: "bi4",
-    subject: "biology",
-    topic: "Ecology",
-    question: "What is a trophic level?",
-    options: ["A tropical region", "The position an organism occupies in a food chain", "A type of biome", "A measurement of biodiversity"],
-    correctAnswer: 1,
-    explanation: "A trophic level is the position an organism occupies in a food chain (producer, primary consumer, etc.).",
-    difficulty: "easy"
-  },
-  {
-    id: "bi5",
-    subject: "biology",
-    topic: "Evolution & Biodiversity",
-    question: "What is natural selection?",
-    options: ["Humans choosing which animals to breed", "The process where organisms with favorable traits survive and reproduce more", "Random mutation", "Genetic engineering"],
-    correctAnswer: 1,
-    explanation: "Natural selection is the process where organisms with traits better suited to their environment survive and reproduce more successfully.",
-    difficulty: "easy"
-  },
-  {
-    id: "bi6",
-    subject: "biology",
-    topic: "Human Physiology",
-    question: "What is the function of villi in the small intestine?",
-    options: ["Producing enzymes", "Increasing surface area for absorption", "Storing bile", "Moving food along"],
-    correctAnswer: 1,
-    explanation: "Villi increase the surface area of the small intestine for efficient absorption of nutrients.",
-    difficulty: "easy"
-  },
-  {
-    id: "bi7",
-    subject: "biology",
-    topic: "Cell Biology",
-    question: "What is the difference between prokaryotic and eukaryotic cells?",
-    options: ["Size only", "Prokaryotes lack a membrane-bound nucleus", "Eukaryotes are smaller", "No difference"],
-    correctAnswer: 1,
-    explanation: "Prokaryotic cells lack a membrane-bound nucleus and other membrane-bound organelles.",
-    difficulty: "medium"
-  },
-  {
-    id: "bi8",
-    subject: "biology",
-    topic: "Molecular Biology",
-    question: "Which molecule carries amino acids to the ribosome during translation?",
-    options: ["mRNA", "rRNA", "tRNA", "DNA"],
-    correctAnswer: 2,
-    explanation: "Transfer RNA (tRNA) carries specific amino acids to the ribosome, matching codons on mRNA with anticodons.",
-    difficulty: "hard"
-  },
+  // MATH AI — Topic 2: Functions
+  { id: "ma8", subject: "math-ai", topic: "2.5 Quadratic Models", question: "What does the discriminant b²-4ac tell you?", options: ["The vertex of the parabola", "The number of real roots", "The y-intercept", "The axis of symmetry"], correctAnswer: 1, explanation: "Δ > 0: two distinct real roots. Δ = 0: one repeated root. Δ < 0: no real roots (complex only).", difficulty: "medium" },
+  { id: "ma9", subject: "math-ai", topic: "2.6 Exponential Models", question: "Which function models exponential decay?", options: ["f(x) = 2ˣ", "f(x) = 3(0.5)ˣ", "f(x) = x²", "f(x) = 2x + 1"], correctAnswer: 1, explanation: "f(x) = 3(0.5)ˣ is exponential decay because the base 0.5 is between 0 and 1.", difficulty: "easy" },
+  { id: "ma10", subject: "math-ai", topic: "2.8 Sinusoidal Models", question: "For f(x) = 3sin(2x) + 1, what is the amplitude and period?", options: ["Amplitude 3, period π", "Amplitude 3, period 2π", "Amplitude 2, period 3π", "Amplitude 1, period π"], correctAnswer: 0, explanation: "Amplitude = |a| = 3. Period = 2π/b = 2π/2 = π.", difficulty: "medium" },
+  { id: "ma11", subject: "math-ai", topic: "2.10 Regression", question: "An r-value of -0.92 indicates:", options: ["Weak positive correlation", "Strong positive correlation", "Strong negative correlation", "No correlation"], correctAnswer: 2, explanation: "r = -0.92 is close to -1, indicating a strong negative linear correlation.", difficulty: "easy" },
+
+  // MATH AI — Topic 3: Geometry and Trigonometry
+  { id: "ma12", subject: "math-ai", topic: "3.1 3D Geometry", question: "What is the volume of a cone with radius 3 cm and height 4 cm?", options: ["12π cm³", "36π cm³", "48π cm³", "9π cm³"], correctAnswer: 0, explanation: "V = ⅓πr²h = ⅓π(9)(4) = 12π ≈ 37.7 cm³.", difficulty: "easy" },
+  { id: "ma13", subject: "math-ai", topic: "3.3 Sine and Cosine Rules", question: "In triangle ABC, a = 7, b = 5, C = 60°. What is the area?", options: ["17.5√3/2", "15.16", "35/2", "8.75"], correctAnswer: 0, explanation: "Area = ½ab sinC = ½(7)(5)sin60° = 17.5 × (√3/2) ≈ 15.16 cm².", difficulty: "medium" },
+  { id: "ma14", subject: "math-ai", topic: "3.3 Sine and Cosine Rules", question: "When should you use the cosine rule?", options: ["When you know two angles and a side", "When you know two sides and the included angle (SAS), or all three sides (SSS)", "Only for right triangles", "When you know one angle and one side"], correctAnswer: 1, explanation: "Cosine rule: a² = b² + c² - 2bc·cosA. Use for SAS or SSS configurations.", difficulty: "medium" },
+  { id: "ma15", subject: "math-ai", topic: "3.5 Voronoi Diagrams", question: "In a Voronoi diagram, each edge is:", options: ["A line connecting two sites", "The perpendicular bisector between two sites", "A radius from a site", "A random boundary"], correctAnswer: 1, explanation: "Voronoi edges are perpendicular bisectors of line segments connecting adjacent sites, equidistant from both.", difficulty: "medium" },
+
+  // MATH AI — Topic 4: Statistics and Probability
+  { id: "ma16", subject: "math-ai", topic: "4.3 Central Tendency", question: "Which measure of central tendency is most affected by outliers?", options: ["Mode", "Median", "Mean", "None of them"], correctAnswer: 2, explanation: "The mean is pulled toward extreme values (outliers), while median and mode are resistant measures.", difficulty: "easy" },
+  { id: "ma17", subject: "math-ai", topic: "4.4 Measures of Dispersion", question: "If the standard deviation of a dataset increases, this means:", options: ["The mean has increased", "Data is more spread out from the mean", "Data is more clustered around the mean", "The median has changed"], correctAnswer: 1, explanation: "Standard deviation measures spread — a larger σ means data points are further from the mean on average.", difficulty: "easy" },
+  { id: "ma18", subject: "math-ai", topic: "4.7 Probability Basics", question: "If P(A) = 0.3, what is P(A')?", options: ["0.3", "0.7", "0.9", "0.1"], correctAnswer: 1, explanation: "P(A') = 1 - P(A) = 1 - 0.3 = 0.7. Complementary events sum to 1.", difficulty: "easy" },
+  { id: "ma19", subject: "math-ai", topic: "4.8 Probability Diagrams", question: "Events A and B are independent. P(A) = 0.4, P(B) = 0.5. What is P(A∩B)?", options: ["0.9", "0.2", "0.1", "0.45"], correctAnswer: 1, explanation: "For independent events: P(A∩B) = P(A) × P(B) = 0.4 × 0.5 = 0.2.", difficulty: "medium" },
+  { id: "ma20", subject: "math-ai", topic: "4.11 Normal Distribution", question: "In a normal distribution with μ = 50 and σ = 5, approximately what percentage falls between 45 and 55?", options: ["50%", "68%", "95%", "99.7%"], correctAnswer: 1, explanation: "45 and 55 are each 1 standard deviation from the mean. ~68% of data falls within ±1σ.", difficulty: "medium" },
+  { id: "ma21", subject: "math-ai", topic: "4.12 Binomial Distribution", question: "Which scenario fits a binomial distribution?", options: ["Measuring heights of students", "Flipping a coin 10 times and counting heads", "Recording time for a race", "Measuring temperature daily"], correctAnswer: 1, explanation: "Binomial: fixed trials (10), two outcomes (H/T), constant probability (0.5), independent. X ~ B(10, 0.5).", difficulty: "easy" },
+  { id: "ma22", subject: "math-ai", topic: "4.13 Chi-squared Test", question: "In a chi-squared test, the null hypothesis (H₀) states:", options: ["There is a strong association", "The variables are independent (no association)", "The observed frequencies match exactly", "The p-value is less than 0.05"], correctAnswer: 1, explanation: "H₀: the two variables are independent (no association). H₁: there is an association. Reject H₀ if p-value < significance level.", difficulty: "medium" },
+  { id: "ma23", subject: "math-ai", topic: "4.13 Chi-squared Test", question: "With 3 rows and 4 columns, what are the degrees of freedom for a χ² test?", options: ["12", "7", "6", "11"], correctAnswer: 2, explanation: "Degrees of freedom = (rows-1)(columns-1) = (3-1)(4-1) = 2×3 = 6.", difficulty: "medium" },
+
+  // MATH AI — Topic 5: Calculus
+  { id: "ma24", subject: "math-ai", topic: "5.3 Differentiation Rules", question: "What is the derivative of f(x) = 5x³ - 2x + 7?", options: ["15x² - 2", "5x² - 2", "15x² - 2x", "15x³ - 2"], correctAnswer: 0, explanation: "f'(x) = 15x² - 2. Power rule for each term, constant differentiates to 0.", difficulty: "easy" },
+  { id: "ma25", subject: "math-ai", topic: "5.4 Tangent Lines", question: "What is the gradient of the tangent to y = x² at x = 3?", options: ["3", "6", "9", "2"], correctAnswer: 1, explanation: "dy/dx = 2x. At x = 3: gradient = 2(3) = 6.", difficulty: "easy" },
+  { id: "ma26", subject: "math-ai", topic: "5.5 Optimization", question: "If f'(x) = 0 and f''(x) > 0 at a point, then that point is:", options: ["A local maximum", "A local minimum", "A point of inflection", "Not determinable"], correctAnswer: 1, explanation: "f'(x)=0 means stationary point. f''(x)>0 means concave up = local minimum.", difficulty: "medium" },
+  { id: "ma27", subject: "math-ai", topic: "5.6 Integration Basics", question: "What is ∫4x³ dx?", options: ["12x²", "x⁴ + C", "4x⁴ + C", "x³ + C"], correctAnswer: 1, explanation: "∫4x³ dx = 4x⁴/4 + C = x⁴ + C. Apply the power rule for integration.", difficulty: "easy" },
+  { id: "ma28", subject: "math-ai", topic: "5.7 Definite Integrals", question: "What does ∫₁³ 2x dx equal?", options: ["4", "8", "6", "10"], correctAnswer: 1, explanation: "∫2x dx = x². Evaluate: [x²]₁³ = 9 - 1 = 8.", difficulty: "medium" },
+  { id: "ma29", subject: "math-ai", topic: "5.10 Rates of Change", question: "A ball's height is h(t) = 20t - 5t². What is the velocity at t = 2?", options: ["0 m/s", "10 m/s", "20 m/s", "-10 m/s"], correctAnswer: 0, explanation: "v(t) = h'(t) = 20 - 10t. At t=2: v(2) = 20 - 20 = 0 m/s (ball at maximum height).", difficulty: "medium" },
+
+  // BIOLOGY (SL) — Theme A: Unity and Diversity
+  { id: "bi1", subject: "biology", topic: "A1.1 Water", question: "Which property of water is due to hydrogen bonding between molecules?", options: ["Transparency", "Cohesion and surface tension", "Low density as a gas", "Acidity"], correctAnswer: 1, explanation: "Hydrogen bonds between water molecules create cohesion, which produces surface tension allowing small insects to walk on water.", difficulty: "easy" },
+  { id: "bi2", subject: "biology", topic: "A1.1 Water", question: "Why does ice float on liquid water?", options: ["Ice has more hydrogen bonds making it denser", "Hydrogen bonds in ice create an open lattice, making it less dense", "Ice contains less oxygen", "Water expands when heated"], correctAnswer: 1, explanation: "In ice, hydrogen bonds form a regular open lattice structure that is less dense than liquid water, so ice floats.", difficulty: "medium" },
+  { id: "bi3", subject: "biology", topic: "A1.1 Water", question: "Water is described as a 'universal solvent'. Which substances dissolve well in water?", options: ["Non-polar and hydrophobic substances", "Polar and charged (ionic) substances", "Only gases", "Only lipids"], correctAnswer: 1, explanation: "Water's polarity allows it to dissolve polar and ionic substances by surrounding them with water molecules (hydration shells).", difficulty: "easy" },
+  { id: "bi4", subject: "biology", topic: "A1.2 Nucleic Acids", question: "Which bases pair together in DNA?", options: ["A-G and T-C", "A-T and G-C", "A-C and G-T", "A-U and G-C"], correctAnswer: 1, explanation: "Adenine pairs with Thymine (2 hydrogen bonds) and Guanine pairs with Cytosine (3 hydrogen bonds) in DNA.", difficulty: "easy" },
+  { id: "bi5", subject: "biology", topic: "A1.2 Nucleic Acids", question: "What sugar is found in RNA but not DNA?", options: ["Deoxyribose", "Glucose", "Ribose", "Fructose"], correctAnswer: 2, explanation: "RNA contains ribose sugar; DNA contains deoxyribose (which lacks one oxygen atom compared to ribose).", difficulty: "easy" },
+  { id: "bi6", subject: "biology", topic: "A2.2 Cell Structure", question: "Which organelle is the site of aerobic respiration?", options: ["Nucleus", "Ribosome", "Mitochondrion", "Golgi apparatus"], correctAnswer: 2, explanation: "Mitochondria are the site of aerobic respiration, producing most of the cell's ATP.", difficulty: "easy" },
+  { id: "bi7", subject: "biology", topic: "A2.2 Cell Structure", question: "Which structure is found in prokaryotic cells?", options: ["Nucleus", "Mitochondria", "70S ribosomes", "Endoplasmic reticulum"], correctAnswer: 2, explanation: "Prokaryotes have 70S ribosomes (smaller than eukaryotic 80S). They lack membrane-bound organelles like nucleus, mitochondria, and ER.", difficulty: "medium" },
+  { id: "bi8", subject: "biology", topic: "A2.2 Cell Structure", question: "Which feature is found in plant cells but NOT animal cells?", options: ["Mitochondria", "Cell wall", "Ribosomes", "Cell membrane"], correctAnswer: 1, explanation: "Plant cells have a cellulose cell wall outside the cell membrane. Animal cells lack a cell wall.", difficulty: "easy" },
+  { id: "bi9", subject: "biology", topic: "A3.1 Diversity of Organisms", question: "In binomial nomenclature, how is a species name written?", options: ["Both words capitalized", "First word lowercase, second capitalized", "First word capitalized, second lowercase, both italicized", "All uppercase"], correctAnswer: 2, explanation: "Binomial names use an italicized Genus (capitalized) + species (lowercase), e.g., Homo sapiens.", difficulty: "easy" },
+  { id: "bi10", subject: "biology", topic: "A4.1 Evolution and Speciation", question: "Which is NOT evidence for evolution?", options: ["Fossil record", "Homologous structures", "DNA sequence similarities", "Identical body plans in all species"], correctAnswer: 3, explanation: "Species have diverse body plans. Fossils, homologous structures, and DNA similarities all provide evidence for common ancestry and evolution.", difficulty: "medium" },
+  { id: "bi11", subject: "biology", topic: "A4.1 Evolution and Speciation", question: "What is genetic drift?", options: ["Directed selection by humans", "Random changes in allele frequency, especially in small populations", "Movement of individuals between populations", "A type of mutation"], correctAnswer: 1, explanation: "Genetic drift is the random fluctuation of allele frequencies, most significant in small populations where chance events can eliminate alleles.", difficulty: "hard" },
+  { id: "bi12", subject: "biology", topic: "A4.2 Conservation of Biodiversity", question: "What is the main cause of current biodiversity loss?", options: ["Natural selection", "Volcanic eruptions", "Human activities (habitat destruction, pollution, overexploitation)", "Asteroid impacts"], correctAnswer: 2, explanation: "Human activities — especially habitat destruction, pollution, overexploitation, and climate change — are the primary drivers of current biodiversity loss.", difficulty: "easy" },
+
+  // BIOLOGY — Theme B: Form and Function
+  { id: "bi13", subject: "biology", topic: "B1.1 Carbohydrates and Lipids", question: "What type of reaction joins monosaccharides together?", options: ["Hydrolysis", "Oxidation", "Condensation", "Reduction"], correctAnswer: 2, explanation: "Condensation reactions join monomers by removing a water molecule, forming glycosidic bonds between monosaccharides.", difficulty: "easy" },
+  { id: "bi14", subject: "biology", topic: "B1.1 Carbohydrates and Lipids", question: "Which polysaccharide is used for energy storage in animals?", options: ["Cellulose", "Starch", "Glycogen", "Chitin"], correctAnswer: 2, explanation: "Glycogen is the main energy storage polysaccharide in animals, stored mainly in liver and muscle cells. It is highly branched for rapid glucose release.", difficulty: "easy" },
+  { id: "bi15", subject: "biology", topic: "B1.1 Carbohydrates and Lipids", question: "What makes phospholipids suitable for forming cell membranes?", options: ["They are fully hydrophobic", "They are fully hydrophilic", "They have a hydrophilic head and hydrophobic tails (amphipathic)", "They are charged molecules"], correctAnswer: 2, explanation: "Phospholipids are amphipathic — hydrophilic phosphate heads face water, hydrophobic fatty acid tails face inward, forming a stable bilayer.", difficulty: "medium" },
+  { id: "bi16", subject: "biology", topic: "B1.2 Proteins", question: "What bond forms between two amino acids?", options: ["Glycosidic bond", "Hydrogen bond", "Peptide bond", "Ester bond"], correctAnswer: 2, explanation: "A peptide bond forms by condensation reaction between the amino group of one amino acid and the carboxyl group of another.", difficulty: "easy" },
+  { id: "bi17", subject: "biology", topic: "B1.2 Proteins", question: "What causes protein denaturation?", options: ["Adding more substrate", "Extreme temperature or pH", "Adding water", "Increasing protein concentration"], correctAnswer: 1, explanation: "Extreme temperature or pH breaks hydrogen and ionic bonds maintaining the protein's 3D structure, altering the active site irreversibly.", difficulty: "medium" },
+  { id: "bi18", subject: "biology", topic: "B2.1 Membranes and Membrane Transport", question: "Which transport process requires ATP?", options: ["Simple diffusion", "Osmosis", "Facilitated diffusion", "Active transport"], correctAnswer: 3, explanation: "Active transport uses ATP to move substances against their concentration gradient (from low to high concentration) via carrier proteins.", difficulty: "easy" },
+  { id: "bi19", subject: "biology", topic: "B2.1 Membranes and Membrane Transport", question: "What is osmosis?", options: ["Movement of solute molecules through a membrane", "Net movement of water from low to high solute concentration through a selectively permeable membrane", "Active transport of water", "Diffusion of gases"], correctAnswer: 1, explanation: "Osmosis is the passive net movement of water molecules from a region of lower solute concentration to higher solute concentration through a selectively permeable membrane.", difficulty: "medium" },
+  { id: "bi20", subject: "biology", topic: "B2.1 Membranes and Membrane Transport", question: "In the fluid mosaic model, what does 'fluid' refer to?", options: ["Water inside the cell", "Phospholipids can move laterally within the bilayer", "Proteins are dissolved", "The cell is flexible"], correctAnswer: 1, explanation: "Fluid refers to the lateral movement of phospholipids and some proteins within the bilayer, giving the membrane flexibility.", difficulty: "medium" },
+  { id: "bi21", subject: "biology", topic: "B2.3 Cell Specialization", question: "Why does increasing cell size become problematic?", options: ["The cell gets too heavy", "The surface area to volume ratio decreases, limiting exchange", "DNA can't replicate fast enough", "Organelles stop functioning"], correctAnswer: 1, explanation: "As a cell grows, its volume increases faster than surface area, reducing the SA:V ratio and making exchange of materials insufficient for the cell's needs.", difficulty: "medium" },
+  { id: "bi22", subject: "biology", topic: "B3.1 Gas Exchange", question: "Which feature of alveoli does NOT aid gas exchange?", options: ["Thin walls (one cell thick)", "Rich blood supply", "Large surface area", "Thick layer of mucus"], correctAnswer: 3, explanation: "Thick mucus would slow gas exchange. Thin walls, rich blood supply, large surface area, and moist lining all facilitate efficient diffusion.", difficulty: "medium" },
+  { id: "bi23", subject: "biology", topic: "B3.2 Transport", question: "Which blood vessel has valves to prevent backflow?", options: ["Artery", "Capillary", "Vein", "Aorta"], correctAnswer: 2, explanation: "Veins have valves because blood pressure is low. Valves prevent backflow and ensure blood moves toward the heart.", difficulty: "easy" },
+  { id: "bi24", subject: "biology", topic: "B3.2 Transport", question: "What is the function of the SA node (sinoatrial node)?", options: ["Pumping blood", "Acting as the natural pacemaker of the heart", "Filtering blood", "Producing red blood cells"], correctAnswer: 1, explanation: "The SA node generates electrical impulses that initiate each heartbeat, setting the rhythm. It is the heart's natural pacemaker.", difficulty: "medium" },
+  { id: "bi25", subject: "biology", topic: "B4.2 Ecological Niches", question: "An organism that makes its own food from inorganic substances is called:", options: ["Heterotroph", "Decomposer", "Autotroph", "Detritivore"], correctAnswer: 2, explanation: "Autotrophs (e.g., plants, algae) produce organic molecules from inorganic substances using energy from light (photosynthesis) or chemicals (chemosynthesis).", difficulty: "easy" },
+
+  // BIOLOGY — Theme C: Interaction and Interdependence
+  { id: "bi26", subject: "biology", topic: "C1.1 Enzymes and Metabolism", question: "What is the induced fit model of enzyme action?", options: ["The substrate changes shape to fit the enzyme", "The active site changes shape slightly when the substrate binds", "Enzymes are permanently rigid", "Multiple substrates bind simultaneously"], correctAnswer: 1, explanation: "In the induced fit model, the active site changes shape slightly upon substrate binding, providing a tighter fit and lowering activation energy.", difficulty: "medium" },
+  { id: "bi27", subject: "biology", topic: "C1.1 Enzymes and Metabolism", question: "At what point does increasing substrate concentration no longer increase reaction rate?", options: ["When temperature drops", "When all active sites are occupied (saturation/Vmax)", "When pH changes", "When water is removed"], correctAnswer: 1, explanation: "At Vmax, all enzyme active sites are occupied by substrate (enzyme saturation). Adding more substrate has no effect because there are no free active sites.", difficulty: "hard" },
+  { id: "bi28", subject: "biology", topic: "C1.2 Cell Respiration", question: "What is the overall equation for aerobic respiration?", options: ["6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂", "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP", "C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂", "2H₂O → 2H₂ + O₂"], correctAnswer: 1, explanation: "Aerobic respiration: glucose + oxygen → carbon dioxide + water + energy (ATP). It is the reverse of photosynthesis.", difficulty: "easy" },
+  { id: "bi29", subject: "biology", topic: "C1.2 Cell Respiration", question: "Which type of respiration produces ethanol?", options: ["Aerobic respiration", "Anaerobic respiration in animals", "Anaerobic respiration in yeast (alcoholic fermentation)", "Photosynthesis"], correctAnswer: 2, explanation: "Alcoholic fermentation in yeast converts pyruvate to ethanol + CO₂ in the absence of oxygen. Animal cells produce lactate instead.", difficulty: "medium" },
+  { id: "bi30", subject: "biology", topic: "C1.3 Photosynthesis", question: "Which factor is NOT a limiting factor for photosynthesis?", options: ["Light intensity", "CO₂ concentration", "Temperature", "Oxygen concentration"], correctAnswer: 3, explanation: "The three main limiting factors are light intensity, CO₂ concentration, and temperature. Oxygen concentration does not directly limit photosynthesis rate.", difficulty: "medium" },
+  { id: "bi31", subject: "biology", topic: "C1.3 Photosynthesis", question: "Where do the light-dependent reactions of photosynthesis occur?", options: ["Stroma", "Cytoplasm", "Thylakoid membranes", "Cell membrane"], correctAnswer: 2, explanation: "Light-dependent reactions occur in the thylakoid membranes of chloroplasts, where chlorophyll absorbs light energy.", difficulty: "medium" },
+  { id: "bi32", subject: "biology", topic: "C2.2 Neural Signalling", question: "What is the role of myelin sheath?", options: ["Producing neurotransmitters", "Insulating the axon and speeding up nerve impulse transmission", "Connecting neurons to muscles", "Storing calcium ions"], correctAnswer: 1, explanation: "The myelin sheath insulates the axon, allowing saltatory conduction (impulse jumps between nodes of Ranvier), greatly increasing transmission speed.", difficulty: "medium" },
+  { id: "bi33", subject: "biology", topic: "C2.2 Neural Signalling", question: "What happens at a synapse?", options: ["Electrical signals jump directly across the gap", "Neurotransmitters diffuse across the synaptic cleft and bind to receptors", "Blood carries the signal", "The signal reverses direction"], correctAnswer: 1, explanation: "Neurotransmitters are released from vesicles, diffuse across the synaptic cleft, and bind to receptors on the postsynaptic membrane to transmit the signal.", difficulty: "medium" },
+  { id: "bi34", subject: "biology", topic: "C3.2 Defence Against Disease", question: "Which cells produce antibodies?", options: ["T-lymphocytes", "Red blood cells", "B-lymphocytes (plasma cells)", "Phagocytes"], correctAnswer: 2, explanation: "B-lymphocytes differentiate into plasma cells that produce and secrete antibodies specific to particular antigens.", difficulty: "medium" },
+  { id: "bi35", subject: "biology", topic: "C3.2 Defence Against Disease", question: "Why don't antibiotics work against viruses?", options: ["Viruses are too small", "Antibiotics target bacterial structures (cell wall, ribosomes) that viruses lack", "Viruses are immune to all drugs", "Antibiotics are too large to enter viruses"], correctAnswer: 1, explanation: "Antibiotics target bacterial cell walls or 70S ribosomes. Viruses lack these structures — they use host cell machinery to replicate.", difficulty: "hard" },
+  { id: "bi36", subject: "biology", topic: "C4.1 Populations and Communities", question: "What is the carrying capacity (K)?", options: ["The maximum speed of population growth", "The maximum population size an environment can sustain indefinitely", "The number of species in an ecosystem", "The birth rate minus death rate"], correctAnswer: 1, explanation: "Carrying capacity (K) is the maximum population size that an environment can sustain indefinitely given available resources.", difficulty: "medium" },
+  { id: "bi37", subject: "biology", topic: "C4.2 Transfers of Energy and Matter", question: "Why are food chains typically limited to 4-5 trophic levels?", options: ["There aren't enough species", "Energy is lost at each level (~90%), leaving insufficient energy for higher levels", "Predators are too rare", "Plants can only support a few levels"], correctAnswer: 1, explanation: "About 90% of energy is lost as heat at each trophic level. After 4-5 levels, there's insufficient energy to support another trophic level.", difficulty: "medium" },
+  { id: "bi38", subject: "biology", topic: "C4.2 Transfers of Energy and Matter", question: "Which process returns carbon from organisms to the atmosphere?", options: ["Photosynthesis", "Respiration", "Nitrogen fixation", "Osmosis"], correctAnswer: 1, explanation: "Cell respiration in all organisms breaks down organic molecules and releases CO₂ back to the atmosphere. Combustion and decomposition also release carbon.", difficulty: "easy" },
+
+  // BIOLOGY — Theme D: Continuity and Change
+  { id: "bi39", subject: "biology", topic: "D1.1 DNA Replication", question: "What does 'semi-conservative' mean in DNA replication?", options: ["Only half the DNA is copied", "Each new DNA molecule has one original strand and one new strand", "The process is 50% accurate", "Only one strand is used"], correctAnswer: 1, explanation: "Semi-conservative means each new double helix consists of one original (parent) strand and one newly synthesized strand.", difficulty: "medium" },
+  { id: "bi40", subject: "biology", topic: "D1.1 DNA Replication", question: "What is the role of helicase in DNA replication?", options: ["Adding nucleotides", "Joining Okazaki fragments", "Unwinding and separating the two DNA strands", "Proofreading the new strand"], correctAnswer: 2, explanation: "Helicase breaks the hydrogen bonds between base pairs, unwinding the double helix and separating the two strands to create replication forks.", difficulty: "medium" },
+  { id: "bi41", subject: "biology", topic: "D1.1 DNA Replication", question: "In PCR, what is the purpose of the denaturation step (95°C)?", options: ["Activate Taq polymerase", "Separate the two DNA strands", "Allow primers to bind", "Copy the DNA"], correctAnswer: 1, explanation: "Heating to 95°C breaks hydrogen bonds between DNA strands, separating them so they can serve as templates for copying.", difficulty: "hard" },
+  { id: "bi42", subject: "biology", topic: "D1.2 Protein Synthesis", question: "Where does transcription take place?", options: ["Ribosome", "Cytoplasm", "Nucleus", "Cell membrane"], correctAnswer: 2, explanation: "Transcription occurs in the nucleus where RNA polymerase reads DNA and produces mRNA, which then exits through nuclear pores.", difficulty: "easy" },
+  { id: "bi43", subject: "biology", topic: "D1.2 Protein Synthesis", question: "What carries amino acids to the ribosome during translation?", options: ["mRNA", "rRNA", "tRNA", "DNA polymerase"], correctAnswer: 2, explanation: "Transfer RNA (tRNA) has an anticodon that matches mRNA codons and carries the corresponding amino acid to the ribosome.", difficulty: "medium" },
+  { id: "bi44", subject: "biology", topic: "D1.2 Protein Synthesis", question: "A codon is a sequence of how many bases?", options: ["1", "2", "3", "4"], correctAnswer: 2, explanation: "A codon is a triplet of three mRNA bases that codes for one amino acid. There are 64 possible codons for 20 amino acids + stop signals.", difficulty: "easy" },
+  { id: "bi45", subject: "biology", topic: "D1.3 Mutation and Gene Editing", question: "Which type of mutation causes a frameshift?", options: ["Base substitution", "Silent mutation", "Insertion or deletion", "Missense mutation"], correctAnswer: 2, explanation: "Insertion or deletion of a base shifts the reading frame of all downstream codons, usually producing a non-functional protein.", difficulty: "medium" },
+  { id: "bi46", subject: "biology", topic: "D1.3 Mutation and Gene Editing", question: "What is a base substitution mutation?", options: ["A base is added", "A base is removed", "One base is replaced by another", "A chromosome breaks"], correctAnswer: 2, explanation: "A base substitution replaces one nucleotide with another. It can be silent (no effect), missense (different amino acid), or nonsense (premature stop codon).", difficulty: "easy" },
+  { id: "bi47", subject: "biology", topic: "D2.1 Cell and Nuclear Division", question: "During which phase of mitosis do chromosomes line up at the cell equator?", options: ["Prophase", "Metaphase", "Anaphase", "Telophase"], correctAnswer: 1, explanation: "During metaphase, chromosomes align along the metaphase plate (cell equator), attached to spindle fibres at their centromeres.", difficulty: "easy" },
+  { id: "bi48", subject: "biology", topic: "D2.1 Cell and Nuclear Division", question: "When does crossing over occur?", options: ["Mitosis prophase", "Meiosis I prophase", "Meiosis II metaphase", "Interphase"], correctAnswer: 1, explanation: "Crossing over occurs during prophase I of meiosis, when homologous chromosomes (bivalents) exchange genetic material at chiasmata.", difficulty: "medium" },
+  { id: "bi49", subject: "biology", topic: "D2.1 Cell and Nuclear Division", question: "What is the result of meiosis?", options: ["2 identical diploid cells", "4 genetically different haploid cells", "4 identical diploid cells", "2 haploid cells"], correctAnswer: 1, explanation: "Meiosis produces 4 genetically unique haploid cells through two rounds of division, with variation from crossing over and independent assortment.", difficulty: "medium" },
+  { id: "bi50", subject: "biology", topic: "D2.3 Water Potential", question: "What happens to a red blood cell in a hypotonic solution?", options: ["It shrinks (crenation)", "It swells and may burst (lysis)", "Nothing happens", "It becomes turgid"], correctAnswer: 1, explanation: "In a hypotonic solution, water enters the cell by osmosis. Animal cells lack a cell wall, so they swell and may burst (lysis/cytolysis).", difficulty: "medium" },
+  { id: "bi51", subject: "biology", topic: "D3.2 Inheritance", question: "In a cross Aa × Aa, what is the expected phenotypic ratio (A dominant)?", options: ["1:1", "3:1", "1:2:1", "4:0"], correctAnswer: 1, explanation: "Aa × Aa gives: 1 AA, 2 Aa, 1 aa. With complete dominance, phenotypic ratio = 3 dominant : 1 recessive.", difficulty: "easy" },
+  { id: "bi52", subject: "biology", topic: "D3.2 Inheritance", question: "Why are males more often affected by X-linked recessive conditions?", options: ["Males have two X chromosomes", "Males only have one X, so one recessive allele is expressed", "Females cannot carry the allele", "It is autosomal"], correctAnswer: 1, explanation: "Males are XY — they only need one recessive allele on their single X chromosome to be affected. Females (XX) can be carriers if heterozygous.", difficulty: "medium" },
+  { id: "bi53", subject: "biology", topic: "D3.3 Homeostasis", question: "What is negative feedback?", options: ["A response that amplifies the original change", "A response that reverses the original change to maintain a set point", "A response that has no effect", "Random fluctuations in body conditions"], correctAnswer: 1, explanation: "Negative feedback reverses a deviation from the set point, returning the variable to normal. E.g., high blood glucose triggers insulin release to lower it.", difficulty: "easy" },
+  { id: "bi54", subject: "biology", topic: "D3.3 Homeostasis", question: "Which hormone lowers blood glucose levels?", options: ["Glucagon", "Adrenaline", "Insulin", "Thyroxine"], correctAnswer: 2, explanation: "Insulin is secreted by β-cells of the pancreas when glucose is high. It promotes glucose uptake by cells and glycogen synthesis in the liver.", difficulty: "easy" },
+  { id: "bi55", subject: "biology", topic: "D4.1 Natural Selection", question: "Which of these is required for natural selection to occur?", options: ["All organisms must be identical", "Heritable variation in a population", "No competition for resources", "Only asexual reproduction"], correctAnswer: 1, explanation: "Natural selection requires heritable variation so that some individuals have traits better suited to the environment, leading to differential survival and reproduction.", difficulty: "medium" },
+  { id: "bi56", subject: "biology", topic: "D4.2 Stability and Change", question: "What is a keystone species?", options: ["The most abundant species in an ecosystem", "A species with a disproportionately large effect relative to its abundance", "The largest predator", "An invasive species"], correctAnswer: 1, explanation: "Keystone species have effects on the ecosystem far greater than their numbers suggest. Their removal causes significant changes (e.g., sea otters, wolves).", difficulty: "medium" },
+  { id: "bi57", subject: "biology", topic: "D4.3 Climate Change", question: "Which gas is the main contributor to the enhanced greenhouse effect?", options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"], correctAnswer: 2, explanation: "CO₂ from burning fossil fuels is the main contributor to the enhanced greenhouse effect. Other greenhouse gases include methane, nitrous oxide, and water vapour.", difficulty: "easy" },
 ];
 
 export function getQuestionsBySubject(slug: string): QuizQuestion[] {

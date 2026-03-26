@@ -3,6 +3,45 @@
 import { ExternalLink, Lightbulb, BookMarked } from "lucide-react";
 import type { Subject } from "@/lib/subjects";
 
+interface Resource {
+  title: string;
+  description: string;
+  url: string;
+}
+
+const subjectResources: Record<string, Resource[]> = {
+  deutsch: [
+    { title: "IB Deutsch A Syllabus Guide", description: "Official IB Language A syllabus outline", url: "https://www.ibo.org/programmes/diploma-programme/curriculum/language-and-literature/" },
+    { title: "IB Command Terms", description: "Official exam command terms & definitions", url: "https://www.ibo.org/programmes/diploma-programme/assessment-and-exams/" },
+    { title: "Literarische Stilmittel", description: "Comprehensive list of literary devices in German", url: "https://wortwuchs.net/stilmittel/" },
+  ],
+  business: [
+    { title: "IB Business Management Syllabus", description: "Official IB BM syllabus outline", url: "https://www.ibo.org/programmes/diploma-programme/curriculum/individuals-and-societies/business-management/" },
+    { title: "IB Command Terms", description: "Official exam command terms & definitions", url: "https://www.ibo.org/programmes/diploma-programme/assessment-and-exams/" },
+    { title: "Business Case Studies", description: "Real-world case studies for Paper 2 practice", url: "https://www.ibmastery.com/blog/business-management" },
+  ],
+  "design-tech": [
+    { title: "IB Design Technology Syllabus", description: "Official IB DT syllabus outline", url: "https://www.ibo.org/programmes/diploma-programme/curriculum/sciences/design-technology/" },
+    { title: "IB Command Terms", description: "Official exam command terms & definitions", url: "https://www.ibo.org/programmes/diploma-programme/assessment-and-exams/" },
+    { title: "Design Museum Collection", description: "Iconic product designs and their stories", url: "https://designmuseum.org/collections" },
+  ],
+  "english-ll": [
+    { title: "IB English A L&L Syllabus", description: "Official IB Language & Literature syllabus", url: "https://www.ibo.org/programmes/diploma-programme/curriculum/language-and-literature/" },
+    { title: "IB Command Terms", description: "Official exam command terms & definitions", url: "https://www.ibo.org/programmes/diploma-programme/assessment-and-exams/" },
+    { title: "Literary & Rhetorical Devices", description: "Comprehensive glossary of literary terms", url: "https://literarydevices.net/" },
+  ],
+  "math-ai": [
+    { title: "IB Math AI Syllabus", description: "Official IB Mathematics AI syllabus outline", url: "https://www.ibo.org/programmes/diploma-programme/curriculum/mathematics/" },
+    { title: "IB Math Formula Booklet", description: "Official formula booklet for exams", url: "https://www.ibo.org/programmes/diploma-programme/curriculum/mathematics/" },
+    { title: "Revision Village — Math AI SL", description: "Video tutorials, practice & past paper solutions", url: "https://www.revisionvillage.com/ib-math-ai-sl/" },
+  ],
+  biology: [
+    { title: "IB Biology Syllabus Guide", description: "Official IB Biology syllabus outline", url: "https://www.ibo.org/programmes/diploma-programme/curriculum/sciences/biology/" },
+    { title: "IB Command Terms", description: "Official exam command terms & definitions", url: "https://www.ibo.org/programmes/diploma-programme/assessment-and-exams/" },
+    { title: "BioNinja", description: "IB Biology revision notes, diagrams & quizzes", url: "https://ib.bioninja.com.au/" },
+  ],
+};
+
 const studyTips: Record<string, string[]> = {
   deutsch: [
     "Lese jeden Tag mindestens 20 Minuten auf Deutsch",
@@ -44,6 +83,7 @@ const studyTips: Record<string, string[]> = {
 
 export default function ResourcesTab({ subject }: { subject: Subject }) {
   const tips = studyTips[subject.slug] || [];
+  const resources = subjectResources[subject.slug] || [];
 
   return (
     <div className="space-y-6">
@@ -70,27 +110,21 @@ export default function ResourcesTab({ subject }: { subject: Subject }) {
           <h2 className="text-lg font-semibold text-white">Key Resources</h2>
         </div>
         <div className="grid gap-3">
-          <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
-            <div>
-              <p className="text-sm font-medium text-white">IB {subject.name} Syllabus Guide</p>
-              <p className="text-xs text-zinc-500">Official IB Syllabus</p>
-            </div>
-            <ExternalLink size={16} className="text-zinc-500" />
-          </div>
-          <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
-            <div>
-              <p className="text-sm font-medium text-white">Command Terms & Definitions</p>
-              <p className="text-xs text-zinc-500">Important exam terminology</p>
-            </div>
-            <ExternalLink size={16} className="text-zinc-500" />
-          </div>
-          <div className="flex items-center justify-between p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
-            <div>
-              <p className="text-sm font-medium text-white">Formula Booklet / Data Booklet</p>
-              <p className="text-xs text-zinc-500">Official IB formula booklet</p>
-            </div>
-            <ExternalLink size={16} className="text-zinc-500" />
-          </div>
+          {resources.map((resource, i) => (
+            <a
+              key={i}
+              href={resource.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors group cursor-pointer"
+            >
+              <div>
+                <p className="text-sm font-medium text-white group-hover:text-emerald-400 transition-colors">{resource.title}</p>
+                <p className="text-xs text-zinc-500">{resource.description}</p>
+              </div>
+              <ExternalLink size={16} className="text-zinc-500 group-hover:text-emerald-400 transition-colors" />
+            </a>
+          ))}
         </div>
       </div>
 
