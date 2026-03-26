@@ -59,6 +59,29 @@ export default function Home() {
         </p>
       </motion.div>
 
+      {/* Study Planner CTA */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.15, duration: 0.5 }}
+        className="max-w-md mx-auto mb-8"
+      >
+        <Link href="/planner">
+          <div className="glass rounded-xl p-4 card-hover cursor-pointer border border-emerald-500/20 hover:border-emerald-500/40 transition-all">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-emerald-500/10">
+                <Timer size={20} className="text-emerald-400" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-sm font-semibold text-white">Study Planner</h3>
+                <p className="text-[11px] text-zinc-500">Personalized revision schedule with countdown</p>
+              </div>
+              <span className="text-xs text-emerald-400 font-medium">Open →</span>
+            </div>
+          </div>
+        </Link>
+      </motion.div>
+
       {/* Stats Bar */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
