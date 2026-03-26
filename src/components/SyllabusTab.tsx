@@ -6,6 +6,7 @@ import { ChevronDown, CheckCircle2, Circle, BookOpen, Lightbulb } from "lucide-r
 import type { Subject } from "@/lib/subjects";
 import { getTopicNotes } from "@/data/topicNotes";
 import { getDiagramsByTopic } from "@/data/diagramData";
+import { useProgress } from "@/lib/useProgress";
 import DiagramChallenge from "@/components/DiagramChallenge";
 
 function renderMarkdown(text: string) {
@@ -21,16 +22,7 @@ function renderMarkdown(text: string) {
 
 export default function SyllabusTab({ subject }: { subject: Subject }) {
   const [openTopic, setOpenTopic] = useState<string | null>(subject.topics[0]?.id || null);
-  const [completed, setCompleted] = useState<Set<string>>(new Set());
-
-  const toggleComplete = (topicId: string) => {
-    setCompleted(prev => {
-      const next = new Set(prev);
-      if (next.has(topicId)) next.delete(topicId);
-      else next.add(topicId);
-      return next;
-    });
-  };
+  const { completedTopics: completed, toggleTopic } = useProgress(subject.slug);
 
   const progress = subject.topics.length > 0
     ? Math.round((completed.size / subject.topics.length) * 100)
@@ -70,7 +62,7 @@ export default function SyllabusTab({ subject }: { subject: Subject }) {
                 className="w-full flex items-center gap-3 p-4 text-left hover:bg-white/5 transition-colors cursor-pointer"
               >
                 <button
-                  onClick={(e) => { e.stopPropagation(); toggleComplete(topic.id); }}
+                  onClick={(e) => { e.stopPropagation(); toggleTopic(topic.id); }}
                   className="shrink-0"
                 >
                   {completed.has(topic.id) ? (

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Timer, Play, Pause, AlertTriangle, CheckCircle2, Send, RotateCcw, FileText, Clock, Award } from "lucide-react";
 import type { Subject } from "@/lib/subjects";
 import { getPapersBySubject, type PastPaper, type PastPaperQuestion } from "@/data/pastPaperData";
+import { useProgress } from "@/lib/useProgress";
 
 function formatTime(seconds: number): string {
   const h = Math.floor(seconds / 3600);
@@ -42,6 +43,7 @@ function evaluateAnswer(answer: string, markscheme: string[], maxMarks: number):
 
 export default function PastPapersTab({ subject }: { subject: Subject }) {
   const papers = getPapersBySubject(subject.slug);
+  const { savePastPaperScore, pastPaperScores } = useProgress(subject.slug);
   const [selectedPaper, setSelectedPaper] = useState<PastPaper | null>(null);
   const [examStarted, setExamStarted] = useState(false);
   const [examFinished, setExamFinished] = useState(false);
@@ -95,6 +97,13 @@ export default function PastPapersTab({ subject }: { subject: Subject }) {
     });
     setResults(newResults);
     setExamFinished(true);
+    // Save score to localStorage
+    const totalScore = Object.values(newResults).reduce((sum, r) => sum + r.score, 0);
+    const totalMax = selectedPaper.questions.reduce((sum, q) => sum + q.marks, 0);
+    const pct = Math.round((totalScore / totalMax) * 100);
+    let g = "1";
+    if (pct >= 90) g = "7"; else if (pct >= 80) g = "6"; else if (pct >= 70) g = "5"; else if (pct >= 55) g = "4"; else if (pct >= 40) g = "3"; else if (pct >= 25) g = "2";
+    savePastPaperScore(selectedPaper.id, totalScore, totalMax, g);
   };
 
   const resetExam = () => {
@@ -159,6 +168,11 @@ export default function PastPapersTab({ subject }: { subject: Subject }) {
                   <span className="flex items-center gap-1"><Clock size={12} /> {paper.duration} min</span>
                   <span className="flex items-center gap-1"><Award size={12} /> {paper.totalMarks} Points</span>
                   <span>{paper.questions.length} Questions</span>
+                  {pastPaperScores[paper.id] && (
+                    <span className="flex items-center gap-1 text-emerald-400">
+                      <CheckCircle2 size={12} /> Best: Grade {pastPaperScores[paper.id].grade} ({Math.round((pastPaperScores[paper.id].score / pastPaperScores[paper.id].total) * 100)}%)
+                    </span>
+                  )}
                 </div>
                 <button
                   onClick={() => startExam(paper)}

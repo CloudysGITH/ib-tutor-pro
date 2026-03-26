@@ -1394,7 +1394,143 @@ export const pastPapers: PastPaper[] = [
         type: "essay"
       }
     ]
-  }
+  },
+
+  // ============================================================
+  // ADDITIONAL PAST PAPERS — Biology SL
+  // ============================================================
+  {
+    id: "bi-p1-topicA",
+    subject: "biology",
+    title: "Biology SL — Theme A: Unity and Diversity",
+    year: "2025",
+    session: "Practice",
+    paper: "Topic Test",
+    duration: 45,
+    totalMarks: 30,
+    questions: [
+      { id: "bi-ta-q1", questionNumber: "1", text: "Explain how the properties of water are important for living organisms. Include at least three properties and their biological significance.", marks: 6, commandTerm: "Explain", markscheme: ["Cohesion and surface tension — allows insects to walk on water, water transport in xylem", "High specific heat capacity — stabilizes temperatures in aquatic environments and organisms", "Solvent properties — dissolves polar/ionic substances for transport and metabolic reactions", "High latent heat of vaporization — effective cooling through sweating and transpiration", "Ice is less dense than liquid water — insulates aquatic habitats in winter"], type: "extended" },
+      { id: "bi-ta-q2", questionNumber: "2", text: "Compare and contrast the structure of DNA and RNA.", marks: 6, commandTerm: "Compare and contrast", markscheme: ["DNA is double-stranded; RNA is single-stranded", "DNA contains deoxyribose sugar; RNA contains ribose sugar", "DNA uses thymine; RNA uses uracil (both have A, G, C)", "Both are polymers of nucleotides with phosphate, sugar, and base", "DNA stores genetic information; RNA is involved in protein synthesis (mRNA, tRNA, rRNA)", "Both have a sugar-phosphate backbone"], type: "extended" },
+      { id: "bi-ta-q3", questionNumber: "3", text: "Outline the differences between prokaryotic and eukaryotic cells.", marks: 6, commandTerm: "Outline", markscheme: ["Prokaryotes lack a membrane-bound nucleus; eukaryotes have a true nucleus", "Prokaryotes have 70S ribosomes; eukaryotes have 80S ribosomes", "Prokaryotes have circular DNA; eukaryotes have linear DNA on chromosomes", "Prokaryotes lack membrane-bound organelles; eukaryotes have mitochondria, ER, Golgi, etc.", "Prokaryotes are generally smaller (1-10 μm); eukaryotes larger (10-100 μm)", "Prokaryotes have a cell wall of peptidoglycan; eukaryotic plant cells have cellulose walls"], type: "extended" },
+      { id: "bi-ta-q4", questionNumber: "4", text: "Describe the evidence for evolution by natural selection.", marks: 6, commandTerm: "Describe", markscheme: ["Fossil record shows change over time and transitional forms", "Homologous structures indicate common ancestry (e.g., pentadactyl limb)", "DNA/molecular evidence — similar sequences in related species", "Observed natural selection in action (e.g., antibiotic resistance in bacteria)", "Biogeography — distribution of species matches evolutionary predictions", "Selective breeding demonstrates how selection changes populations"], type: "extended" },
+      { id: "bi-ta-q5", questionNumber: "5", text: "Explain the process of natural selection and how it leads to evolution.", marks: 6, commandTerm: "Explain", markscheme: ["Variation exists within a population due to mutations and sexual reproduction", "Overproduction of offspring leads to competition for limited resources", "Individuals with advantageous traits have higher survival and reproduction rates", "These traits are heritable and passed to offspring", "Over generations, the frequency of advantageous alleles increases in the population", "This can lead to adaptation and eventually speciation if populations become isolated"], type: "essay" },
+    ]
+  },
+
+  {
+    id: "bi-p1-topicCD",
+    subject: "biology",
+    title: "Biology SL — Themes C & D: Interactions & Change",
+    year: "2025",
+    session: "Practice",
+    paper: "Topic Test",
+    duration: 50,
+    totalMarks: 36,
+    questions: [
+      { id: "bi-tcd-q1", questionNumber: "1", text: "Explain the effect of temperature on enzyme activity. Include reference to the induced fit model.", marks: 6, commandTerm: "Explain", markscheme: ["As temperature increases, kinetic energy of molecules increases — more enzyme-substrate collisions", "Rate increases up to the optimum temperature", "At optimum, maximum rate of reaction (most enzyme-substrate complexes formed)", "Beyond optimum, hydrogen and ionic bonds break — active site changes shape (denaturation)", "Induced fit model: active site changes shape slightly to fit substrate more precisely", "Denatured enzymes can no longer form enzyme-substrate complexes — rate drops to zero"], type: "extended" },
+      { id: "bi-tcd-q2", questionNumber: "2", text: "Compare aerobic and anaerobic respiration.", marks: 6, commandTerm: "Compare", markscheme: ["Aerobic requires oxygen; anaerobic does not", "Aerobic produces CO₂ and H₂O; anaerobic produces lactate (animals) or ethanol + CO₂ (yeast)", "Aerobic yields ~36-38 ATP per glucose; anaerobic yields only 2 ATP", "Aerobic occurs in mitochondria; anaerobic occurs in cytoplasm only", "Both start with glycolysis in the cytoplasm", "Aerobic is more efficient; anaerobic is faster for short-term energy"], type: "extended" },
+      { id: "bi-tcd-q3", questionNumber: "3", text: "Describe the process of DNA replication, including the role of key enzymes.", marks: 8, commandTerm: "Describe", markscheme: ["Helicase unwinds the double helix and separates the two strands by breaking hydrogen bonds", "Each strand acts as a template for the new complementary strand", "DNA polymerase adds free nucleotides complementary to the template strand", "Nucleotides are added in the 5' to 3' direction", "Leading strand is synthesized continuously; lagging strand in Okazaki fragments", "DNA ligase joins Okazaki fragments on the lagging strand", "The process is semi-conservative — each new molecule has one old and one new strand", "Result: two identical DNA molecules"], type: "essay" },
+      { id: "bi-tcd-q4", questionNumber: "4", text: "Explain how blood glucose levels are regulated by negative feedback.", marks: 8, commandTerm: "Explain", markscheme: ["High blood glucose detected by beta cells of the pancreas", "Beta cells secrete insulin into the blood", "Insulin stimulates cells to absorb glucose and liver to convert glucose to glycogen", "Blood glucose level falls back to normal (set point)", "Low blood glucose detected by alpha cells of the pancreas", "Alpha cells secrete glucagon into the blood", "Glucagon stimulates liver to break down glycogen into glucose (glycogenolysis)", "Blood glucose level rises back to normal — negative feedback loop restores homeostasis"], type: "essay" },
+      { id: "bi-tcd-q5", questionNumber: "5", text: "Compare mitosis and meiosis.", marks: 8, commandTerm: "Compare", markscheme: ["Mitosis: one division; meiosis: two divisions", "Mitosis: 2 daughter cells; meiosis: 4 daughter cells", "Mitosis: diploid daughter cells; meiosis: haploid daughter cells", "Mitosis: genetically identical; meiosis: genetically different", "Mitosis: for growth and repair; meiosis: for gamete production", "Meiosis involves crossing over in prophase I; mitosis does not", "Meiosis has independent assortment of homologous pairs; mitosis does not", "Both involve DNA replication in interphase before division begins"], type: "essay" },
+    ]
+  },
+
+  // ============================================================
+  // ADDITIONAL PAST PAPERS — Math AI SL
+  // ============================================================
+  {
+    id: "ma-p1-stats",
+    subject: "math-ai",
+    title: "Math AI SL — Statistics & Probability Focus",
+    year: "2025",
+    session: "Practice",
+    paper: "Paper 1 Style",
+    duration: 45,
+    totalMarks: 30,
+    questions: [
+      { id: "ma-st-q1", questionNumber: "1", text: "A dataset has the following values: 12, 15, 18, 20, 22, 25, 28, 30, 35, 100.\n\n(a) Calculate the mean and median.\n(b) Which measure of central tendency better represents this data? Justify your answer.", marks: 6, commandTerm: "Calculate and Justify", markscheme: ["Mean = (12+15+18+20+22+25+28+30+35+100)/10 = 305/10 = 30.5", "Median = (22+25)/2 = 23.5 (average of 5th and 6th values)", "Median better represents the data because the mean is pulled up by the outlier (100)", "The mean (30.5) is higher than most values due to the outlier", "Median is resistant to outliers", "State that outlier at 100 skews the distribution positively"], type: "short" },
+      { id: "ma-st-q2", questionNumber: "2", text: "Events A and B are such that P(A) = 0.4, P(B) = 0.3, and P(A ∩ B) = 0.12.\n\n(a) Are A and B independent? Justify.\n(b) Find P(A ∪ B).\n(c) Find P(A | B).", marks: 8, commandTerm: "Find and Justify", markscheme: ["Test independence: P(A) × P(B) = 0.4 × 0.3 = 0.12 = P(A ∩ B), so YES independent", "P(A ∪ B) = P(A) + P(B) - P(A ∩ B) = 0.4 + 0.3 - 0.12 = 0.58", "P(A | B) = P(A ∩ B) / P(B) = 0.12 / 0.3 = 0.4", "Note P(A | B) = P(A) confirms independence", "Show working for each step", "Correct use of formulas"], type: "short" },
+      { id: "ma-st-q3", questionNumber: "3", text: "The weights of apples in a farm are normally distributed with mean 150g and standard deviation 20g.\n\n(a) Find the probability that a randomly selected apple weighs more than 180g.\n(b) Find the probability that an apple weighs between 130g and 170g.\n(c) 10% of apples are rejected for being too light. Find the maximum weight for rejection.", marks: 8, commandTerm: "Find", markscheme: ["X ~ N(150, 20²)", "P(X > 180) = P(Z > 1.5) = 0.0668 (using GDC)", "P(130 < X < 170) = P(-1 < Z < 1) = 0.6827 (using GDC)", "For 10% rejection: P(X < k) = 0.10", "Using inverse normal on GDC: k = 124.4g (to 3 s.f.)", "Apples under 124g are rejected", "Show GDC notation clearly", "Sketch a normal curve with shaded region for each part"], type: "extended" },
+      { id: "ma-st-q4", questionNumber: "4", text: "A researcher tests whether there is an association between gender (male/female) and preferred study method (visual/auditory/reading). The data is:\n\nVisual: M=30, F=45 | Auditory: M=25, F=15 | Reading: M=20, F=25\n\nConduct a chi-squared test at the 5% significance level.", marks: 8, commandTerm: "Test", markscheme: ["State H₀: gender and study method are independent (no association)", "State H₁: gender and study method are not independent", "Calculate expected values using (row total × column total)/grand total", "Grand total = 160", "Calculate χ² statistic using GDC or formula", "Degrees of freedom = (2-1)(3-1) = 2", "Find p-value using GDC", "Compare p-value to 0.05 significance level", "If p < 0.05: reject H₀, there is sufficient evidence of association", "Write conclusion in context"], type: "extended" },
+    ]
+  },
+
+  // ============================================================
+  // ADDITIONAL PAST PAPERS — Business Management HL
+  // ============================================================
+  {
+    id: "bm-p2-2024",
+    subject: "business",
+    title: "Business Management HL — Paper 2 Style",
+    year: "2024",
+    session: "Practice",
+    paper: "Paper 2",
+    duration: 105,
+    totalMarks: 50,
+    questions: [
+      { id: "bm-p2-q1a", questionNumber: "1a", text: "Define the term 'economies of scale'.", marks: 2, commandTerm: "Define", markscheme: ["Cost advantages that a business gains as output increases", "Average cost per unit falls as the scale of production increases"], type: "short" },
+      { id: "bm-p2-q1b", questionNumber: "1b", text: "Explain two types of economies of scale that a large car manufacturer might benefit from.", marks: 4, commandTerm: "Explain", markscheme: ["Purchasing/bulk buying — large orders at discounted prices for components, reducing unit costs", "Technical — large-scale machinery (robots, assembly lines) spread over high output, lowering average cost", "Financial — large firms can borrow at lower interest rates due to lower risk", "Marketing — advertising costs spread over more units sold", "Must identify the type AND explain with reference to car manufacturing"], type: "extended" },
+      { id: "bm-p2-q1c", questionNumber: "1c", text: "A car manufacturer is considering either expanding its existing factory (internal growth) or acquiring a smaller competitor (external growth). Evaluate which growth strategy would be more appropriate.", marks: 10, commandTerm: "Evaluate", markscheme: ["Internal growth: lower risk, maintains culture, but slower and limited by current capacity", "External growth (acquisition): faster market share gain, access to competitor's technology/customers", "But: culture clash risk, high cost of acquisition, integration challenges", "Consider financial position — can they afford acquisition?", "Consider market conditions — is speed important?", "Consider strategic objectives — market share vs organic capability building", "Balanced evaluation with advantages and disadvantages of both", "Clear recommendation with justification based on the specific context", "Reference to stakeholder impact", "Quality of argument and use of business terminology"], type: "essay" },
+      { id: "bm-p2-q2a", questionNumber: "2a", text: "Using the following data, calculate the break-even quantity:\n\nFixed costs: €200,000\nSelling price per unit: €50\nVariable cost per unit: €30", marks: 4, commandTerm: "Calculate", markscheme: ["Break-even = Fixed Costs / Contribution per unit", "Contribution per unit = Selling price - Variable cost = €50 - €30 = €20", "Break-even = €200,000 / €20 = 10,000 units", "Show formula and working clearly"], type: "short" },
+      { id: "bm-p2-q2b", questionNumber: "2b", text: "The company currently sells 15,000 units. Calculate the margin of safety and explain its significance.", marks: 4, commandTerm: "Calculate and Explain", markscheme: ["Margin of safety = Actual sales - Break-even = 15,000 - 10,000 = 5,000 units", "This means sales can fall by 5,000 units (33%) before the company makes a loss", "A large margin of safety reduces financial risk", "Show calculation and interpret in context"], type: "short" },
+      { id: "bm-p2-q3", questionNumber: "3", text: "Discuss the advantages and disadvantages of using penetration pricing when launching a new product in a competitive market.", marks: 10, commandTerm: "Discuss", markscheme: ["Penetration pricing: setting a low initial price to attract customers and gain market share quickly", "Advantage: attracts price-sensitive customers, builds market share rapidly", "Advantage: discourages competitors from entering (low margins)", "Advantage: creates brand awareness and customer loyalty", "Disadvantage: low initial profits or losses, may not cover costs", "Disadvantage: customers may perceive low quality", "Disadvantage: difficult to raise prices later (customers resist)", "Consider market conditions: highly competitive = penetration more appropriate", "Compare with alternatives (skimming, competitive pricing)", "Balanced conclusion with recommendation"], type: "essay" },
+    ]
+  },
+
+  // ============================================================
+  // ADDITIONAL — Design Technology HL
+  // ============================================================
+  {
+    id: "dt-p1-materials",
+    subject: "design-tech",
+    title: "Design Technology HL — Materials & Manufacturing",
+    year: "2025",
+    session: "Practice",
+    paper: "Topic Test",
+    duration: 45,
+    totalMarks: 30,
+    questions: [
+      { id: "dt-mat-q1", questionNumber: "1", text: "Compare thermoplastics and thermosetting plastics. Give one example of each and a typical application.", marks: 6, commandTerm: "Compare", markscheme: ["Thermoplastics can be reheated and reshaped; thermosets cannot", "Thermoplastics have weak intermolecular forces that break on heating; thermosets have permanent cross-links", "Thermoplastics are recyclable; thermosets are not recyclable", "Example thermoplastic: ABS (LEGO bricks), PET (bottles), PP (packaging)", "Example thermoset: epoxy resin (adhesives, surfboards), melamine (kitchen surfaces)", "Appropriate application matched to material properties"], type: "extended" },
+      { id: "dt-mat-q2", questionNumber: "2", text: "Explain the concept of 'embodied energy' and discuss why it is important when selecting materials for sustainable product design.", marks: 8, commandTerm: "Explain and Discuss", markscheme: ["Embodied energy: total energy consumed across entire lifecycle of a product", "Includes raw material extraction, manufacturing, transport, assembly", "Higher embodied energy = larger environmental footprint", "Aluminium has very high embodied energy but is infinitely recyclable", "Wood has low embodied energy and is renewable", "Material selection should consider embodied energy alongside functional requirements", "LCA (Life Cycle Assessment) is used to measure and compare", "Trade-offs between performance, cost, and environmental impact"], type: "essay" },
+      { id: "dt-mat-q3", questionNumber: "3", text: "A company produces custom furniture. Explain why job production is the most appropriate method and outline two disadvantages.", marks: 6, commandTerm: "Explain and Outline", markscheme: ["Job production: one-off, custom products made to individual specifications", "Appropriate because each furniture piece is unique to customer requirements", "High quality and craftsmanship possible", "Disadvantage 1: high unit cost due to skilled labour and no economies of scale", "Disadvantage 2: slow production rate — cannot meet high demand", "Disadvantage: requires skilled workers who may be expensive or scarce"], type: "extended" },
+      { id: "dt-mat-q4", questionNumber: "4", text: "Evaluate the use of cradle-to-cradle design principles in reducing environmental impact.", marks: 10, commandTerm: "Evaluate", markscheme: ["Cradle-to-cradle: all materials designed to be fully recycled or composted", "Biological nutrients return to nature safely; technical nutrients are recycled infinitely", "Eliminates concept of waste — everything is a resource for something else", "Advantage: dramatically reduces landfill waste and resource depletion", "Advantage: reduces need for virgin raw materials", "Advantage: can drive innovation in material science", "Limitation: expensive to implement, requires complete redesign of products/processes", "Limitation: not all materials can currently be cycled perfectly", "Limitation: requires consumer participation in returning products", "Balanced evaluation with clear conclusion"], type: "essay" },
+    ]
+  },
+
+  // ============================================================
+  // ADDITIONAL — English A L&L SL
+  // ============================================================
+  {
+    id: "en-p1-2024",
+    subject: "english-ll",
+    title: "English A L&L SL — Paper 1: Guided Analysis",
+    year: "2024",
+    session: "Practice",
+    paper: "Paper 1",
+    duration: 75,
+    totalMarks: 20,
+    questions: [
+      { id: "en-p1-24-q1", questionNumber: "1", text: "Read the following extract from a speech by a climate activist at a youth conference:\n\n\"They tell us to be patient. They tell us change takes time. But time is the one thing we don't have. Every day we wait, another species vanishes. Every hour we delay, another glacier crumbles into the sea. We are not the leaders of tomorrow — we are the leaders of today, and today we demand action.\n\nYou might call us idealistic. You might call us naive. But we call ourselves the last generation that can make a difference. And we refuse — absolutely refuse — to let that opportunity slip through our fingers like sand.\"\n\nAnalyse how the speaker uses language and rhetorical strategies to persuade the audience. In your analysis, consider the guiding question: How does the speaker create a sense of urgency?", marks: 20, commandTerm: "Analyse", markscheme: ["Identify text type: persuasive speech at a youth conference", "Anaphora: 'They tell us' and 'Every day/hour' create rhythm and emphasis", "Rule of three: 'patient... time... one thing' builds momentum", "Contrast: 'leaders of tomorrow' vs 'leaders of today' challenges the status quo", "Emotive imagery: 'species vanishes', 'glacier crumbles' creates vivid urgency", "Direct address: 'You might call us' engages and challenges the audience", "Repetition of 'refuse' emphasises determination", "Metaphor: 'slip through our fingers like sand' — time as something physical and fleeting", "Inclusive pronouns 'we' create solidarity with audience", "Short sentences create urgency and forcefulness", "Tone shifts from defensive to assertive to passionate", "Overall effect: builds urgency through escalating rhetoric and emotional appeal"], type: "essay" },
+    ]
+  },
+
+  // ============================================================
+  // ADDITIONAL — Deutsch A HL
+  // ============================================================
+  {
+    id: "de-io-practice",
+    subject: "deutsch",
+    title: "Deutsch A HL — IO-Vorbereitung: Globale Fragestellungen",
+    year: "2025",
+    session: "Practice",
+    paper: "IO Prep",
+    duration: 30,
+    totalMarks: 20,
+    questions: [
+      { id: "de-io-q1", questionNumber: "1", text: "Wähle eine globale Fragestellung (z.B. Identität, Geschlechterrollen, Machtmissbrauch, Migration) und erkläre, wie sie sich in einem literarischen Werk deiner Wahl manifestiert. Analysiere mindestens zwei konkrete Textstellen.", marks: 10, commandTerm: "Analysieren", markscheme: ["Klar formulierte globale Fragestellung mit Relevanz", "Literarisches Werk benannt und kontextualisiert", "Mindestens zwei konkrete Textstellen analysiert (nicht nur zusammengefasst)", "Verbindung zwischen Textstellen und globaler Fragestellung hergestellt", "Analyse von Stilmitteln und deren Wirkung", "Zeigt Verständnis für die Autorenintention", "Schlüsselkonzepte berücksichtigt (Identität, Perspektive, Repräsentation etc.)", "Kohärente Struktur und klare Argumentation", "Präziser Sprachgebrauch und Fachvokabular", "Eigene Schlussfolgerung mit Begründung"], type: "essay" },
+      { id: "de-io-q2", questionNumber: "2", text: "Vergleiche, wie ein literarischer und ein nicht-literarischer Text die gleiche globale Fragestellung behandeln. Welche unterschiedlichen Perspektiven und Techniken werden eingesetzt?", marks: 10, commandTerm: "Vergleichen", markscheme: ["Beide Texte klar identifiziert und der globalen Fragestellung zugeordnet", "Analyse der sprachlichen/stilistischen Mittel in beiden Texten", "Vergleich der Perspektiven: Wessen Stimme wird gehört? Welche Werte werden vermittelt?", "Unterschiede in Textart, Zweck und Publikum berücksichtigt", "Kontraste und Gemeinsamkeiten herausgearbeitet", "Kritische Bewertung: Welcher Text behandelt die Fragestellung effektiver und warum?", "Schlüsselkonzepte explizit referenziert", "Textstellen als Belege verwendet", "Kohärente vergleichende Struktur (nicht getrennt analysiert)", "Abschliessende Synthese mit eigener Position"], type: "essay" },
+    ]
+  },
 ];
 
 export function getPapersBySubject(slug: string): PastPaper[] {

@@ -320,6 +320,235 @@ export const diagrams: Diagram[] = [
       { id: "z5", correctLabel: "Telophase & Cytokinesis", x: 90, y: 85 },
     ],
   },
+
+  // ============================================================
+  // BIOLOGY — DNA Structure
+  // ============================================================
+  {
+    id: "bio-dna",
+    subject: "biology",
+    topicId: "bio-A1.2",
+    title: "DNA Double Helix Structure",
+    description: "Label the components of a DNA molecule.",
+    svgViewBox: "0 0 400 300",
+    svgElements: `
+      <!-- Sugar-phosphate backbone strand 1 -->
+      <path d="M 120 20 Q 180 60 120 100 Q 60 140 120 180 Q 180 220 120 260 Q 80 280 100 300" fill="none" stroke="#3b82f6" stroke-width="4" opacity="0.7"/>
+      <!-- Sugar-phosphate backbone strand 2 -->
+      <path d="M 280 20 Q 220 60 280 100 Q 340 140 280 180 Q 220 220 280 260 Q 320 280 300 300" fill="none" stroke="#ef4444" stroke-width="4" opacity="0.7"/>
+      <!-- Base pairs (rungs) -->
+      <line x1="145" y1="50" x2="255" y2="50" stroke="#4ade80" stroke-width="3" opacity="0.5"/>
+      <text x="175" y="45" fill="#4ade80" font-size="10" opacity="0.7">A</text>
+      <text x="220" y="45" fill="#f59e0b" font-size="10" opacity="0.7">T</text>
+      <line x1="195" y1="50" x2="205" y2="50" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 2"/>
+      <line x1="100" y1="100" x2="300" y2="100" stroke="#a855f7" stroke-width="3" opacity="0.5"/>
+      <text x="170" y="95" fill="#a855f7" font-size="10" opacity="0.7">G</text>
+      <text x="220" y="95" fill="#f472b6" font-size="10" opacity="0.7">C</text>
+      <line x1="190" y1="100" x2="210" y2="100" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 2"/>
+      <line x1="100" y1="150" x2="300" y2="150" stroke="#4ade80" stroke-width="3" opacity="0.5"/>
+      <text x="170" y="145" fill="#f59e0b" font-size="10" opacity="0.7">T</text>
+      <text x="220" y="145" fill="#4ade80" font-size="10" opacity="0.7">A</text>
+      <line x1="145" y1="200" x2="255" y2="200" stroke="#a855f7" stroke-width="3" opacity="0.5"/>
+      <text x="175" y="195" fill="#f472b6" font-size="10" opacity="0.7">C</text>
+      <text x="220" y="195" fill="#a855f7" font-size="10" opacity="0.7">G</text>
+      <line x1="100" y1="250" x2="300" y2="250" stroke="#4ade80" stroke-width="3" opacity="0.5"/>
+      <!-- Hydrogen bonds (dashes between bases) -->
+      <line x1="190" y1="150" x2="210" y2="150" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 2"/>
+      <line x1="195" y1="200" x2="205" y2="200" stroke="#9ca3af" stroke-width="1" stroke-dasharray="2 2"/>
+      <!-- Direction arrows -->
+      <text x="90" y="15" fill="#3b82f6" font-size="9" opacity="0.5">5'</text>
+      <text x="85" y="295" fill="#3b82f6" font-size="9" opacity="0.5">3'</text>
+      <text x="295" y="15" fill="#ef4444" font-size="9" opacity="0.5">3'</text>
+      <text x="305" y="295" fill="#ef4444" font-size="9" opacity="0.5">5'</text>
+    `,
+    zones: [
+      { id: "z1", correctLabel: "Sugar-phosphate backbone", x: 22, y: 20 },
+      { id: "z2", correctLabel: "Base pair", x: 50, y: 33 },
+      { id: "z3", correctLabel: "Hydrogen bonds", x: 50, y: 50 },
+      { id: "z4", correctLabel: "Adenine (A)", x: 38, y: 15 },
+      { id: "z5", correctLabel: "Thymine (T)", x: 60, y: 15 },
+      { id: "z6", correctLabel: "Guanine (G)", x: 38, y: 30 },
+      { id: "z7", correctLabel: "Cytosine (C)", x: 60, y: 30 },
+      { id: "z8", correctLabel: "Antiparallel strands", x: 80, y: 50 },
+    ],
+  },
+
+  // ============================================================
+  // BIOLOGY — Photosynthesis Overview
+  // ============================================================
+  {
+    id: "bio-photosynthesis",
+    subject: "biology",
+    topicId: "bio-C1.3",
+    title: "Photosynthesis Overview",
+    description: "Label the inputs, outputs, and locations of photosynthesis.",
+    svgViewBox: "0 0 400 250",
+    svgElements: `
+      <!-- Chloroplast outline -->
+      <ellipse cx="200" cy="125" rx="170" ry="95" fill="#14532d" opacity="0.2" stroke="#22c55e" stroke-width="2"/>
+      <!-- Thylakoid stack (granum) -->
+      <rect x="60" y="80" width="90" height="14" rx="7" fill="#166534" stroke="#4ade80" stroke-width="1.5"/>
+      <rect x="60" y="98" width="90" height="14" rx="7" fill="#166534" stroke="#4ade80" stroke-width="1.5"/>
+      <rect x="60" y="116" width="90" height="14" rx="7" fill="#166534" stroke="#4ade80" stroke-width="1.5"/>
+      <rect x="60" y="134" width="90" height="14" rx="7" fill="#166534" stroke="#4ade80" stroke-width="1.5"/>
+      <!-- Stroma area -->
+      <text x="230" y="130" fill="#9ca3af" font-size="10" opacity="0.3">STROMA</text>
+      <!-- Arrow: Light → Thylakoid -->
+      <path d="M 20 60 L 70 85" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow)"/>
+      <text x="5" y="50" fill="#f59e0b" font-size="11" font-weight="bold">Light</text>
+      <!-- Arrow: H2O input -->
+      <path d="M 20 170 L 70 145" stroke="#3b82f6" stroke-width="2"/>
+      <text x="5" y="185" fill="#3b82f6" font-size="10">H₂O</text>
+      <!-- Arrow: O2 output -->
+      <path d="M 70 160 L 20 200" stroke="#22c55e" stroke-width="2"/>
+      <text x="5" y="218" fill="#22c55e" font-size="10">O₂ out</text>
+      <!-- Arrow: ATP/NADPH from thylakoid to stroma -->
+      <path d="M 155 110 L 210 110" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4 2"/>
+      <text x="160" y="102" fill="#f59e0b" font-size="9">ATP + NADPH</text>
+      <!-- CO2 input to stroma -->
+      <path d="M 380 90 L 310 110" stroke="#9ca3af" stroke-width="2"/>
+      <text x="355" y="80" fill="#9ca3af" font-size="10">CO₂</text>
+      <!-- Calvin cycle circle in stroma -->
+      <circle cx="270" cy="130" r="35" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.5"/>
+      <text x="248" y="135" fill="#a855f7" font-size="9" opacity="0.6">Calvin</text>
+      <text x="251" y="146" fill="#a855f7" font-size="9" opacity="0.6">Cycle</text>
+      <!-- Glucose output -->
+      <path d="M 305 140 L 370 170" stroke="#22c55e" stroke-width="2"/>
+      <text x="348" y="190" fill="#22c55e" font-size="10">C₆H₁₂O₆</text>
+    `,
+    zones: [
+      { id: "z1", correctLabel: "Thylakoid (granum)", x: 25, y: 40 },
+      { id: "z2", correctLabel: "Stroma", x: 60, y: 48 },
+      { id: "z3", correctLabel: "Light energy", x: 5, y: 18 },
+      { id: "z4", correctLabel: "Water (H₂O)", x: 5, y: 65 },
+      { id: "z5", correctLabel: "Oxygen (O₂)", x: 5, y: 82 },
+      { id: "z6", correctLabel: "Carbon dioxide (CO₂)", x: 90, y: 28 },
+      { id: "z7", correctLabel: "Glucose (C₆H₁₂O₆)", x: 90, y: 72 },
+      { id: "z8", correctLabel: "ATP + NADPH", x: 45, y: 35 },
+    ],
+  },
+
+  // ============================================================
+  // DESIGN TECHNOLOGY — Scale of Production
+  // ============================================================
+  {
+    id: "dt-production-scale",
+    subject: "design-tech",
+    topicId: "dtech-4.3",
+    title: "Scales of Production",
+    description: "Match each production method to its characteristics.",
+    svgViewBox: "0 0 500 200",
+    svgElements: `
+      <!-- Job Production -->
+      <rect x="10" y="30" width="110" height="140" rx="10" fill="#1e293b" stroke="#a855f7" stroke-width="2" opacity="0.6"/>
+      <text x="65" y="60" text-anchor="middle" fill="#a855f7" font-size="11" font-weight="bold">JOB</text>
+      <!-- Single unique item -->
+      <rect x="40" y="80" width="40" height="40" rx="5" fill="#a855f7" opacity="0.2" stroke="#a855f7" stroke-width="1"/>
+      <text x="60" y="105" text-anchor="middle" fill="#a855f7" font-size="8">Custom</text>
+      <text x="65" y="150" text-anchor="middle" fill="#9ca3af" font-size="8">One-off</text>
+      <!-- Batch Production -->
+      <rect x="135" y="30" width="110" height="140" rx="10" fill="#1e293b" stroke="#3b82f6" stroke-width="2" opacity="0.6"/>
+      <text x="190" y="60" text-anchor="middle" fill="#3b82f6" font-size="11" font-weight="bold">BATCH</text>
+      <!-- Multiple identical items -->
+      <rect x="150" y="80" width="25" height="25" rx="3" fill="#3b82f6" opacity="0.2" stroke="#3b82f6" stroke-width="1"/>
+      <rect x="180" y="80" width="25" height="25" rx="3" fill="#3b82f6" opacity="0.2" stroke="#3b82f6" stroke-width="1"/>
+      <rect x="150" y="110" width="25" height="25" rx="3" fill="#3b82f6" opacity="0.2" stroke="#3b82f6" stroke-width="1"/>
+      <rect x="180" y="110" width="25" height="25" rx="3" fill="#3b82f6" opacity="0.2" stroke="#3b82f6" stroke-width="1"/>
+      <text x="190" y="150" text-anchor="middle" fill="#9ca3af" font-size="8">Groups</text>
+      <!-- Mass Production -->
+      <rect x="260" y="30" width="110" height="140" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2" opacity="0.6"/>
+      <text x="315" y="60" text-anchor="middle" fill="#22c55e" font-size="11" font-weight="bold">MASS</text>
+      <!-- Conveyor belt with items -->
+      <line x1="270" y1="105" x2="360" y2="105" stroke="#22c55e" stroke-width="2" opacity="0.4"/>
+      <rect x="275" y="85" width="15" height="15" rx="2" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="0.8"/>
+      <rect x="295" y="85" width="15" height="15" rx="2" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="0.8"/>
+      <rect x="315" y="85" width="15" height="15" rx="2" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="0.8"/>
+      <rect x="335" y="85" width="15" height="15" rx="2" fill="#22c55e" opacity="0.2" stroke="#22c55e" stroke-width="0.8"/>
+      <text x="315" y="150" text-anchor="middle" fill="#9ca3af" font-size="8">Continuous</text>
+      <!-- Continuous Production -->
+      <rect x="385" y="30" width="110" height="140" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2" opacity="0.6"/>
+      <text x="440" y="55" text-anchor="middle" fill="#f59e0b" font-size="10" font-weight="bold">CONTINUOUS</text>
+      <!-- 24/7 symbol -->
+      <text x="440" y="100" text-anchor="middle" fill="#f59e0b" font-size="18" opacity="0.4">24/7</text>
+      <text x="440" y="150" text-anchor="middle" fill="#9ca3af" font-size="8">Non-stop</text>
+      <!-- Arrow: increasing volume -->
+      <line x1="30" y1="190" x2="480" y2="190" stroke="#9ca3af" stroke-width="1" opacity="0.3"/>
+      <text x="250" y="200" text-anchor="middle" fill="#9ca3af" font-size="9" opacity="0.4">Volume →</text>
+      <text x="30" y="18" fill="#9ca3af" font-size="9" opacity="0.3">High unit cost</text>
+      <text x="420" y="18" fill="#9ca3af" font-size="9" opacity="0.3">Low unit cost</text>
+    `,
+    zones: [
+      { id: "z1", correctLabel: "Job production", x: 12, y: 50 },
+      { id: "z2", correctLabel: "Batch production", x: 37, y: 50 },
+      { id: "z3", correctLabel: "Mass production", x: 63, y: 50 },
+      { id: "z4", correctLabel: "Continuous production", x: 88, y: 50 },
+      { id: "z5", correctLabel: "Highest unit cost", x: 12, y: 85 },
+      { id: "z6", correctLabel: "Lowest unit cost", x: 88, y: 85 },
+    ],
+  },
+
+  // ============================================================
+  // DESIGN TECHNOLOGY — Material Properties
+  // ============================================================
+  {
+    id: "dt-material-types",
+    subject: "design-tech",
+    topicId: "dtech-4.2",
+    title: "Material Categories",
+    description: "Label the main material categories and their key examples.",
+    svgViewBox: "0 0 500 200",
+    svgElements: `
+      <!-- Metals -->
+      <rect x="10" y="20" width="90" height="160" rx="10" fill="#1e293b" stroke="#60a5fa" stroke-width="2" opacity="0.6"/>
+      <text x="55" y="50" text-anchor="middle" fill="#60a5fa" font-size="11" font-weight="bold">METALS</text>
+      <text x="55" y="80" text-anchor="middle" fill="#9ca3af" font-size="8">Steel</text>
+      <text x="55" y="95" text-anchor="middle" fill="#9ca3af" font-size="8">Aluminium</text>
+      <text x="55" y="110" text-anchor="middle" fill="#9ca3af" font-size="8">Copper</text>
+      <text x="55" y="140" text-anchor="middle" fill="#60a5fa" font-size="7" opacity="0.5">Ferrous &</text>
+      <text x="55" y="152" text-anchor="middle" fill="#60a5fa" font-size="7" opacity="0.5">Non-ferrous</text>
+      <!-- Polymers -->
+      <rect x="110" y="20" width="90" height="160" rx="10" fill="#1e293b" stroke="#a855f7" stroke-width="2" opacity="0.6"/>
+      <text x="155" y="45" text-anchor="middle" fill="#a855f7" font-size="10" font-weight="bold">POLYMERS</text>
+      <text x="155" y="80" text-anchor="middle" fill="#9ca3af" font-size="8">ABS, PET</text>
+      <text x="155" y="95" text-anchor="middle" fill="#9ca3af" font-size="8">Epoxy</text>
+      <text x="155" y="110" text-anchor="middle" fill="#9ca3af" font-size="8">Nylon</text>
+      <text x="155" y="140" text-anchor="middle" fill="#a855f7" font-size="7" opacity="0.5">Thermo &</text>
+      <text x="155" y="152" text-anchor="middle" fill="#a855f7" font-size="7" opacity="0.5">Thermoset</text>
+      <!-- Timber -->
+      <rect x="210" y="20" width="90" height="160" rx="10" fill="#1e293b" stroke="#f59e0b" stroke-width="2" opacity="0.6"/>
+      <text x="255" y="50" text-anchor="middle" fill="#f59e0b" font-size="11" font-weight="bold">TIMBER</text>
+      <text x="255" y="80" text-anchor="middle" fill="#9ca3af" font-size="8">Oak</text>
+      <text x="255" y="95" text-anchor="middle" fill="#9ca3af" font-size="8">Pine</text>
+      <text x="255" y="110" text-anchor="middle" fill="#9ca3af" font-size="8">MDF</text>
+      <text x="255" y="140" text-anchor="middle" fill="#f59e0b" font-size="7" opacity="0.5">Hard, Soft,</text>
+      <text x="255" y="152" text-anchor="middle" fill="#f59e0b" font-size="7" opacity="0.5">Manufactured</text>
+      <!-- Composites -->
+      <rect x="310" y="20" width="90" height="160" rx="10" fill="#1e293b" stroke="#22c55e" stroke-width="2" opacity="0.6"/>
+      <text x="355" y="45" text-anchor="middle" fill="#22c55e" font-size="10" font-weight="bold">COMPOSITES</text>
+      <text x="355" y="80" text-anchor="middle" fill="#9ca3af" font-size="8">Carbon fibre</text>
+      <text x="355" y="95" text-anchor="middle" fill="#9ca3af" font-size="8">GRP</text>
+      <text x="355" y="110" text-anchor="middle" fill="#9ca3af" font-size="8">Concrete</text>
+      <text x="355" y="140" text-anchor="middle" fill="#22c55e" font-size="7" opacity="0.5">2+ materials</text>
+      <text x="355" y="152" text-anchor="middle" fill="#22c55e" font-size="7" opacity="0.5">combined</text>
+      <!-- Ceramics -->
+      <rect x="410" y="20" width="80" height="160" rx="10" fill="#1e293b" stroke="#ef4444" stroke-width="2" opacity="0.6"/>
+      <text x="450" y="45" text-anchor="middle" fill="#ef4444" font-size="10" font-weight="bold">CERAMICS</text>
+      <text x="450" y="80" text-anchor="middle" fill="#9ca3af" font-size="8">Glass</text>
+      <text x="450" y="95" text-anchor="middle" fill="#9ca3af" font-size="8">Porcelain</text>
+      <text x="450" y="110" text-anchor="middle" fill="#9ca3af" font-size="8">Brick</text>
+      <text x="450" y="140" text-anchor="middle" fill="#ef4444" font-size="7" opacity="0.5">Hard, brittle</text>
+      <text x="450" y="152" text-anchor="middle" fill="#ef4444" font-size="7" opacity="0.5">heat resistant</text>
+    `,
+    zones: [
+      { id: "z1", correctLabel: "Metals", x: 10, y: 10 },
+      { id: "z2", correctLabel: "Polymers (Plastics)", x: 30, y: 10 },
+      { id: "z3", correctLabel: "Timber (Wood)", x: 50, y: 10 },
+      { id: "z4", correctLabel: "Composites", x: 70, y: 10 },
+      { id: "z5", correctLabel: "Ceramics", x: 90, y: 10 },
+      { id: "z6", correctLabel: "Thermoplastic", x: 30, y: 90 },
+      { id: "z7", correctLabel: "Thermoset", x: 30, y: 97 },
+    ],
+  },
 ];
 
 export function getDiagramsBySubject(slug: string): Diagram[] {

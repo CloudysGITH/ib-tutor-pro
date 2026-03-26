@@ -5,9 +5,11 @@ import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Shuffle, RotateCcw } from "lucide-react";
 import type { Subject } from "@/lib/subjects";
 import { getFlashcardsBySubject } from "@/data/flashcardData";
+import { useProgress } from "@/lib/useProgress";
 
 export default function FlashcardTab({ subject }: { subject: Subject }) {
   const allCards = useMemo(() => getFlashcardsBySubject(subject.slug), [subject.slug]);
+  const { markFlashcardSeen, flashcardsSeen } = useProgress(subject.slug);
   const [topicFilter, setTopicFilter] = useState("all");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
@@ -24,6 +26,7 @@ export default function FlashcardTab({ subject }: { subject: Subject }) {
   const topics = useMemo(() => [...new Set(allCards.map(c => c.topic))], [allCards]);
 
   const goNext = () => {
+    if (cards[currentIndex]) markFlashcardSeen(cards[currentIndex].id);
     setFlipped(false);
     setTimeout(() => setCurrentIndex(i => (i + 1) % cards.length), 150);
   };

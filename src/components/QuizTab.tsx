@@ -5,9 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, XCircle, RotateCcw, Trophy, Filter } from "lucide-react";
 import type { Subject } from "@/lib/subjects";
 import { getQuestionsBySubject } from "@/data/quizData";
+import { useProgress } from "@/lib/useProgress";
 
 export default function QuizTab({ subject }: { subject: Subject }) {
   const allQuestions = useMemo(() => getQuestionsBySubject(subject.slug), [subject.slug]);
+  const { saveQuizScore } = useProgress(subject.slug);
   const [topicFilter, setTopicFilter] = useState("all");
   const [diffFilter, setDiffFilter] = useState("all");
   const [started, setStarted] = useState(false);
@@ -47,6 +49,7 @@ export default function QuizTab({ subject }: { subject: Subject }) {
   const nextQuestion = () => {
     if (currentIndex + 1 >= questions.length) {
       setFinished(true);
+      saveQuizScore(`${subject.slug}-${topicFilter}-${diffFilter}`, score + (selected === questions[currentIndex]?.correctAnswer ? 1 : 0), questions.length);
     } else {
       setCurrentIndex(i => i + 1);
       setSelected(null);
