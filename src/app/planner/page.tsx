@@ -19,10 +19,44 @@ import {
 } from "lucide-react";
 import { subjects } from "@/lib/subjects";
 
-// IB May 2026 exam dates (approximate — exams run May 1-22)
-const EXAM_START = new Date("2026-05-01T00:00:00");
 // Study leave starts April 4, 2026 — 3 weeks completely free for revision
 const STUDY_LEAVE_START = new Date("2026-04-04T00:00:00");
+
+// Official IB May 2026 exam dates per subject
+interface ExamDate {
+  subject: string;
+  slug: string;
+  color: string;
+  paper: string;
+  date: Date;
+  session: "AM" | "PM";
+  duration: string;
+}
+
+const EXAM_DATES: ExamDate[] = [
+  // Deutsch A HL — Language A L&L (non-English) April 27-28
+  { subject: "Deutsch A", slug: "deutsch", color: "#f59e0b", paper: "Paper 1", date: new Date("2026-04-27"), session: "AM", duration: "2h 15min" },
+  { subject: "Deutsch A", slug: "deutsch", color: "#f59e0b", paper: "Paper 2", date: new Date("2026-04-28"), session: "AM", duration: "1h 45min" },
+  // Business Management HL — April 29-30
+  { subject: "Business Mgmt", slug: "business", color: "#10b981", paper: "Paper 1", date: new Date("2026-04-29"), session: "AM", duration: "1h 30min" },
+  { subject: "Business Mgmt", slug: "business", color: "#10b981", paper: "Paper 3 (HL)", date: new Date("2026-04-29"), session: "PM", duration: "1h 15min" },
+  { subject: "Business Mgmt", slug: "business", color: "#10b981", paper: "Paper 2", date: new Date("2026-04-30"), session: "AM", duration: "1h 45min" },
+  // English A L&L SL — May 7-8
+  { subject: "English A L&L", slug: "english-ll", color: "#3b82f6", paper: "Paper 1", date: new Date("2026-05-07"), session: "AM", duration: "1h 15min" },
+  { subject: "English A L&L", slug: "english-ll", color: "#3b82f6", paper: "Paper 2", date: new Date("2026-05-08"), session: "AM", duration: "1h 45min" },
+  // Biology SL — May 11-12
+  { subject: "Biology", slug: "biology", color: "#22c55e", paper: "Paper 1", date: new Date("2026-05-11"), session: "PM", duration: "1h 30min" },
+  { subject: "Biology", slug: "biology", color: "#22c55e", paper: "Paper 2", date: new Date("2026-05-12"), session: "AM", duration: "1h 30min" },
+  // Math AI SL — May 14-15
+  { subject: "Math AI", slug: "math-ai", color: "#ef4444", paper: "Paper 1", date: new Date("2026-05-14"), session: "PM", duration: "1h 30min" },
+  { subject: "Math AI", slug: "math-ai", paper: "Paper 2", date: new Date("2026-05-15"), session: "PM", duration: "1h 30min", color: "#ef4444" },
+  // Design Technology HL — May 15, 18
+  { subject: "Design Tech", slug: "design-tech", color: "#a855f7", paper: "Papers 1 & 2", date: new Date("2026-05-15"), session: "PM", duration: "3h" },
+  { subject: "Design Tech", slug: "design-tech", color: "#a855f7", paper: "Paper 3 (HL)", date: new Date("2026-05-18"), session: "AM", duration: "1h 30min" },
+];
+
+// First exam = Deutsch A Paper 1 on April 27
+const EXAM_START = EXAM_DATES[0].date;
 
 interface WeekPlan {
   week: number;
@@ -88,102 +122,141 @@ function generateStudyPlan(): WeekPlan[] {
     const isExamWeek = w === weeksLeft;
 
     if (isExamWeek) {
-      // EXAM WEEK — light review only
+      // EXAM PERIOD — focus only on upcoming exams
       plans.push({
         week: w,
         dateRange,
-        focus: "Exam Week — Final Review",
+        focus: "Prüfungsphase — Nur noch letzte Wiederholung vor jeder Prüfung",
         tasks: [
-          ...subjectInfo.map(s => ({
-            subject: s.name, slug: s.slug, color: s.color,
-            task: "Quick flashcard review + key definitions only (30 min max)",
-            type: "review" as const,
-          })),
-          { subject: "All Subjects", slug: "", color: "#f59e0b",
-            task: "Review exam tips and command terms for each subject",
+          { subject: "Deutsch A", slug: "deutsch", color: "#f59e0b",
+            task: "Mo 27.04 Paper 1, Di 28.04 Paper 2 — vorher: nur Flashcards + Stilmittel",
+            type: "review" as const },
+          { subject: "Business Mgmt", slug: "business", color: "#10b981",
+            task: "Mi 29.04 Paper 1+3, Do 30.04 Paper 2 — vorher: Toolkit + Formeln",
+            type: "review" as const },
+          { subject: "English A L&L", slug: "english-ll", color: "#3b82f6",
+            task: "Do 07.05 Paper 1, Fr 08.05 Paper 2 — vorher: Literary Devices + Exam Tips",
+            type: "review" as const },
+          { subject: "Biology", slug: "biology", color: "#22c55e",
+            task: "Mo 11.05 Paper 1, Di 12.05 Paper 2 — vorher: Definitionen + Diagramme",
+            type: "review" as const },
+          { subject: "Math AI", slug: "math-ai", color: "#ef4444",
+            task: "Do 14.05 Paper 1, Fr 15.05 Paper 2 — vorher: Formeln + GDC üben",
+            type: "review" as const },
+          { subject: "Design Tech", slug: "design-tech", color: "#a855f7",
+            task: "Fr 15.05 Papers 1&2, Mo 18.05 Paper 3 — vorher: Materialien + Sustainability",
             type: "review" as const },
           { subject: "Wellbeing", slug: "", color: "#22c55e",
-            task: "Sleep 8+ hours, eat well, stay calm — you've prepared!",
+            task: "8+ Stunden Schlaf, gesund essen, Pausen einlegen — du bist vorbereitet!",
             type: "review" as const },
         ],
       });
     } else if (isStudyLeave && studyLeaveWeekNum === 1) {
-      // STUDY LEAVE WEEK 1 — Intensive HL review (full days available!)
+      // STUDY LEAVE WEEK 1 (04.04–10.04) — First exams are Deutsch (27.04) + Business (29.04)!
       plans.push({
         week: w,
         dateRange,
-        focus: "Study Leave Week 1 — Intensive HL Review",
+        focus: "Study Leave Wk 1 — Deutsch A & Business zuerst! (Prüfung 27.+29.04)",
         tasks: [
-          ...hl.map(s => ({
-            subject: s.name, slug: s.slug, color: s.color,
-            task: `Full topic review: study notes for ALL ${s.topicCount} topics (morning sessions)`,
-            type: "study" as const,
-          })),
-          ...hl.map(s => ({
-            subject: s.name, slug: s.slug, color: s.color,
-            task: `Complete ALL flashcards + quiz (afternoon sessions)`,
-            type: "quiz" as const,
-          })),
-          ...sl.map(s => ({
-            subject: s.name, slug: s.slug, color: s.color,
-            task: `Review first half of topics + flashcards (1 hour evening)`,
-            type: "study" as const,
-          })),
+          { subject: "Deutsch A", slug: "deutsch", color: "#f59e0b",
+            task: "PRIORITÄT: Alle 12 Topics durcharbeiten — Study Notes + Stilmittel (ganzer Tag)",
+            type: "study" as const },
+          { subject: "Deutsch A", slug: "deutsch", color: "#f59e0b",
+            task: "Alle Flashcards + Quiz durcharbeiten",
+            type: "quiz" as const },
+          { subject: "Deutsch A", slug: "deutsch", color: "#f59e0b",
+            task: "Paper 1 Übung: Textanalyse unter Zeitdruck (2h 15min)",
+            type: "papers" as const },
+          { subject: "Business Mgmt", slug: "business", color: "#10b981",
+            task: "PRIORITÄT: Alle 37 Topics durcharbeiten — Study Notes (ganzer Tag)",
+            type: "study" as const },
+          { subject: "Business Mgmt", slug: "business", color: "#10b981",
+            task: "Alle Flashcards + Quiz + BM Toolkit-Tools lernen",
+            type: "quiz" as const },
+          { subject: "Business Mgmt", slug: "business", color: "#10b981",
+            task: "Practice Paper unter Zeitdruck starten",
+            type: "papers" as const },
+          { subject: "Design Tech", slug: "design-tech", color: "#a855f7",
+            task: "Abends: Erste Hälfte der Topics durchgehen (Prüfung erst 15.05)",
+            type: "study" as const },
           { subject: "Biology", slug: "biology", color: "#22c55e",
-            task: "Practice all diagram labelling challenges",
+            task: "Abends: Diagram-Übungen (Zellen, Herz, Membran) + Flashcards",
             type: "quiz" as const },
         ],
       });
     } else if (isStudyLeave && studyLeaveWeekNum === 2) {
-      // STUDY LEAVE WEEK 2 — SL deep dive + HL weak areas
+      // STUDY LEAVE WEEK 2 (11.04–17.04) — Continue HL prep + start SL subjects
       plans.push({
         week: w,
         dateRange,
-        focus: "Study Leave Week 2 — SL Deep Dive + HL Weak Areas",
+        focus: "Study Leave Wk 2 — Deutsch/BM vertiefen + English & Bio starten",
         tasks: [
-          ...sl.map(s => ({
-            subject: s.name, slug: s.slug, color: s.color,
-            task: `Full topic review: study notes for ALL ${s.topicCount} topics`,
-            type: "study" as const,
-          })),
-          ...sl.map(s => ({
-            subject: s.name, slug: s.slug, color: s.color,
-            task: `Complete ALL flashcards + full quiz`,
-            type: "quiz" as const,
-          })),
-          ...hl.map(s => ({
-            subject: s.name, slug: s.slug, color: s.color,
-            task: `Review weak topics (where quiz scores < 70%)`,
-            type: "review" as const,
-          })),
-          { subject: "All Subjects", slug: "", color: "#9ca3af",
-            task: "Start first practice paper for each subject (timed!)",
+          { subject: "Deutsch A", slug: "deutsch", color: "#f59e0b",
+            task: "Paper 2 Übung: Vergleichender Aufsatz (1h 45min) + IO-Vorbereitung",
             type: "papers" as const },
+          { subject: "Deutsch A", slug: "deutsch", color: "#f59e0b",
+            task: "Schwache Topics wiederholen + alle Past Papers abschließen",
+            type: "review" as const },
+          { subject: "Business Mgmt", slug: "business", color: "#10b981",
+            task: "Alle Practice Papers abschließen + Markschemes studieren",
+            type: "papers" as const },
+          { subject: "Business Mgmt", slug: "business", color: "#10b981",
+            task: "HL-spezifisch: Effizienz-Kennzahlen, NPV, Lean Production, CPA",
+            type: "study" as const },
+          { subject: "English A L&L", slug: "english-ll", color: "#3b82f6",
+            task: "Alle Topics durcharbeiten — Study Notes + Literary Devices (Prüfung 07.05)",
+            type: "study" as const },
+          { subject: "English A L&L", slug: "english-ll", color: "#3b82f6",
+            task: "Flashcards + Quiz + Paper 1 Übung",
+            type: "quiz" as const },
+          { subject: "Biology", slug: "biology", color: "#22c55e",
+            task: "Alle 34 Topics durcharbeiten — Themes A-D (Prüfung 11.05)",
+            type: "study" as const },
+          { subject: "Biology", slug: "biology", color: "#22c55e",
+            task: "Alle Flashcards + Quiz abschließen",
+            type: "quiz" as const },
+          { subject: "Math AI", slug: "math-ai", color: "#ef4444",
+            task: "Abends: Topics 1-3 durchgehen (Prüfung erst 14.05)",
+            type: "study" as const },
         ],
       });
     } else if (isStudyLeave && studyLeaveWeekNum === 3) {
-      // STUDY LEAVE WEEK 3 — Past papers + exam simulation
+      // STUDY LEAVE WEEK 3 (18.04–24.04) — Final prep, exams start 27.04!
       plans.push({
         week: w,
         dateRange,
-        focus: "Study Leave Week 3 — Exam Practice & Past Papers",
+        focus: "Study Leave Wk 3 — Letzte Woche! Past Papers + Endspurt",
         tasks: [
-          ...subjectInfo.map(s => ({
-            subject: s.name, slug: s.slug, color: s.color,
-            task: `Complete ALL remaining practice papers under timed conditions`,
-            type: "papers" as const,
-          })),
-          ...subjectInfo.map(s => ({
-            subject: s.name, slug: s.slug, color: s.color,
-            task: `Review markschemes — note patterns and common mistakes`,
-            type: "review" as const,
-          })),
-          { subject: "All Subjects", slug: "", color: "#f59e0b",
-            task: "Create personal cheat sheets: key formulas, definitions, command terms",
+          { subject: "Deutsch A", slug: "deutsch", color: "#f59e0b",
+            task: "FINAL: Nur noch Flashcards + Definitionen. Prüfung in 3 Tagen!",
             type: "review" as const },
-          { subject: "All Subjects", slug: "", color: "#9ca3af",
-            task: "Re-do quizzes where you scored below 80%",
-            type: "quiz" as const },
+          { subject: "Business Mgmt", slug: "business", color: "#10b981",
+            task: "FINAL: Toolkit-Tools, Kennzahlen-Formeln, Command Terms wiederholen",
+            type: "review" as const },
+          { subject: "English A L&L", slug: "english-ll", color: "#3b82f6",
+            task: "Alle Past Papers abschließen + Markschemes studieren",
+            type: "papers" as const },
+          { subject: "Biology", slug: "biology", color: "#22c55e",
+            task: "Alle Past Papers unter Zeitdruck + Diagramme üben",
+            type: "papers" as const },
+          { subject: "Biology", slug: "biology", color: "#22c55e",
+            task: "Schwache Themes wiederholen (wo Quiz < 70%)",
+            type: "review" as const },
+          { subject: "Math AI", slug: "math-ai", color: "#ef4444",
+            task: "Topics 4-5 (Statistik + Kalkül) durcharbeiten + alle Flashcards",
+            type: "study" as const },
+          { subject: "Math AI", slug: "math-ai", color: "#ef4444",
+            task: "Alle Practice Papers unter Zeitdruck — GDC-Übung!",
+            type: "papers" as const },
+          { subject: "Design Tech", slug: "design-tech", color: "#a855f7",
+            task: "Alle Topics abschließen + HL-Extensions (UCD, Sustainability, Production)",
+            type: "study" as const },
+          { subject: "Design Tech", slug: "design-tech", color: "#a855f7",
+            task: "Practice Papers + Material-Diagramme üben",
+            type: "papers" as const },
+          { subject: "All Subjects", slug: "", color: "#f59e0b",
+            task: "Persönliche Zusammenfassungen: Formeln, Definitionen, Command Terms",
+            type: "review" as const },
         ],
       });
     } else if (isBeforeStudyLeave) {
@@ -330,6 +403,68 @@ export default function PlannerPage() {
             </div>
           )}
         </div>
+      </motion.div>
+
+      {/* Exam Dates Calendar */}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.12 }}
+        className="glass rounded-xl p-5 mb-6"
+      >
+        <h3 className="text-sm font-semibold text-white mb-4 flex items-center gap-2">
+          <Calendar size={16} className="text-amber-400" />
+          Your Exam Dates — May 2026
+        </h3>
+        <div className="space-y-2">
+          {EXAM_DATES.map((exam, i) => {
+            const examDays = getDaysUntil(exam.date);
+            const isPast = examDays === 0 && new Date() > exam.date;
+            const isToday = examDays === 0;
+            const isSoon = examDays <= 7 && examDays > 0;
+            return (
+              <div
+                key={i}
+                className={`flex items-center gap-3 p-2.5 rounded-lg ${
+                  isToday ? 'bg-red-500/10 border border-red-500/20' :
+                  isSoon ? 'bg-amber-500/5' : 'bg-white/[0.02]'
+                }`}
+              >
+                <div
+                  className="w-1.5 h-8 rounded-full shrink-0"
+                  style={{ background: exam.color }}
+                />
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-semibold text-white">{exam.subject}</span>
+                    <span className="text-[10px] text-zinc-500">{exam.paper}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-[10px] text-zinc-500">
+                    <span>{exam.date.toLocaleDateString('de-DE', { weekday: 'short', day: 'numeric', month: 'short' })}</span>
+                    <span>·</span>
+                    <span>{exam.session}</span>
+                    <span>·</span>
+                    <span>{exam.duration}</span>
+                  </div>
+                </div>
+                <div className="text-right shrink-0">
+                  {isPast ? (
+                    <span className="text-[10px] text-zinc-600">Done</span>
+                  ) : isToday ? (
+                    <span className="text-xs font-bold text-red-400 animate-pulse">TODAY</span>
+                  ) : (
+                    <span className={`text-xs font-bold ${isSoon ? 'text-amber-400' : 'text-zinc-500'}`}>
+                      {examDays}d
+                    </span>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <p className="text-[10px] text-zinc-600 mt-3">
+          Zeiten abhängig von der Exam Zone deiner Schule (A, B, oder C). Quelle: IBO May 2026 Examination Schedule.
+        </p>
       </motion.div>
 
       {/* Overall Progress */}
